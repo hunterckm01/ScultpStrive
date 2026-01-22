@@ -30,7 +30,7 @@ export const Header = () => {
               alt="Sculpt and Strive Logo" 
               className="h-14 w-auto object-contain"
             />
-            <span className="font-display font-bold text-xl text-foreground hidden sm:block">
+            <span className="font-display font-bold text-xl text-foreground ">
               Sculpt and Strive
             </span>
           </NavLink>
