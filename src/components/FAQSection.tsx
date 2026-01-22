@@ -93,10 +93,12 @@ export const FAQSection = () => {
             <p className="text-muted-foreground mb-6">
               Our team is here to help you find the perfect program for your goals.
             </p>
-            <Button variant="hero" size="lg">
-              <MessageCircle className="w-5 h-5" />
-              Chat with Us
-            </Button>
+            <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
+              <Button variant="hero" size="lg">
+                <MessageCircle className="w-5 h-5" />
+                Chat with Us
+              </Button>
+            </a>
           </div>
         </div>
       </div>

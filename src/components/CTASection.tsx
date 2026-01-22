@@ -1,5 +1,7 @@
 import { Heart, Shield, Check, Star, Users, Award, Sparkles, ArrowRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AuthModal } from "./auth/AuthModal";
+import { useState } from "react";
 
 const trustStats = [
   { value: "50,000+", label: "Lives Transformed", icon: Users },
@@ -129,20 +131,24 @@ export const CTASection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <Button
-            size="lg"
-            className="bg-white text-primary hover:bg-white/90 font-bold px-10 py-6 text-lg rounded-xl shadow-2xl shadow-black/20 group transition-all duration-300 hover:scale-105"
-          >
-            Start Your Free Trial
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-2 border-white/30 text-white bg-transparent hover:bg-white/10 font-semibold px-8 py-6 text-lg rounded-xl backdrop-blur-sm"
-          >
-            See How It Works
-          </Button>
+          <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
+            <Button
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 font-bold px-10 py-6 text-lg rounded-xl shadow-2xl shadow-black/20 group transition-all duration-300 hover:scale-105"
+              >
+              Start Your Free Trial
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
+          <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-white/30 text-white bg-transparent hover:bg-white/10 font-semibold px-8 py-6 text-lg rounded-xl backdrop-blur-sm"
+              >
+              See How It Works
+            </Button>
+          </a>
         </div>
 
         {/* Bottom Trust Elements */}

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ProgramCard } from "./ProgramCard";
 import {
   Baby,
@@ -10,6 +11,7 @@ import {
   Target,
   Sparkles,
 } from "lucide-react";
+import { AuthModal } from "./auth/AuthModal";
 
 const programs = [
   {
@@ -78,6 +80,7 @@ const programs = [
 ];
 
 export const ProgramsSection = () => {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
   return (
     <section id="programs" className="py-24 relative overflow-hidden">
       {/* Background decoration */}
@@ -111,6 +114,7 @@ export const ProgramsSection = () => {
           ))}
         </div>
       </div>
+      <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
     </section>
   );
 };

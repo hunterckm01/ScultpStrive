@@ -30,7 +30,7 @@ export const Header = () => {
               alt="Sculpt and Strive Logo" 
               className="h-14 w-auto object-contain"
             />
-            <span className="font-display font-bold text-xl text-foreground ">
+            <span className="font-display font-bold text-xl text-foreground hidden sm:block">
               Sculpt and Strive
             </span>
           </NavLink>
@@ -43,6 +43,8 @@ export const Header = () => {
               </NavLink>
             ))}
           </nav>
+
+          <p className="font-display font-bold text-xl text-foreground block sm:hidden">Sculpt and Strive</p>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">

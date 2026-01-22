@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Eye, Move, HandMetal, Crosshair } from "lucide-react";
+import { useState } from "react";
 
 const assessments = [
   {
@@ -70,10 +71,12 @@ export const AssessmentSection = () => {
               ))}
             </div>
 
-            <Button variant="hero" size="lg">
-              Book Your Assessment
-              <ArrowRight className="w-5 h-5" />
-            </Button>
+            <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
+              <Button className = "cursor-pointer" variant="hero" size="lg">
+                Book Your Assessment
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </a>
           </div>
 
           {/* Right Visual */}

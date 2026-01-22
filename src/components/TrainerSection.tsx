@@ -80,7 +80,7 @@ export const TrainerSection = () => {
             <Card 
               key={trainer.name}
               variant="elevated"
-              className="p-6 text-center group animate-slide-up"
+              className="p-6 text-center group animate-slide-up "
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Avatar */}

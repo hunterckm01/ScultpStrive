@@ -30,7 +30,7 @@ const pillars = [
 ];
 
 const trustStats = [
-  { icon: Users, value: 50000, suffix: "+", label: "Lives Transformed", color: "text-primary" },
+  // { icon: Users, value: 50000, suffix: "+", label: "Lives Transformed", color: "text-primary" },
   { icon: TrendingUp, value: 98, suffix: "%", label: "Success Rate", color: "text-secondary" },
   { icon: Award, value: 15, suffix: "+", label: "Years Experience", color: "text-primary" },
   { icon: Clock, value: 24, suffix: "/7", label: "Support Available", color: "text-secondary" },
@@ -154,7 +154,7 @@ export const PhilosophySection = () => {
           </div>
 
           {/* Trust Statistics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-16 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             {trustStats.map((stat) => (
               <StatCounter key={stat.label} stat={stat} />
             ))}

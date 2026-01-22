@@ -146,9 +146,9 @@ export const PlansSection = () => {
                                     }
                                 </ul>
                                 <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
-                                <Button variant = "default" size = "default" >
-                                    Enquiry Now
-                                </Button>
+                                  <Button variant = "default" size = "default" >
+                                      Enquiry Now
+                                  </Button>
                                 </a>
                             </div>
                         ))

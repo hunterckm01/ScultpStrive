@@ -8,6 +8,7 @@ import {
   MapPin 
 } from "lucide-react";
 import logo from "@/assets/sculpt-and-strive-logo.jpg";
+import { useNavigate } from "react-router-dom";
 
 const footerLinks = {
   Programs: [
@@ -44,6 +45,16 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    if(location.pathname === "/"){
+      window.scrollTo({top:0, behavior: "smooth"})
+    }
+    else{
+      navigate("/");
+    }
+  }
+ 
   return (
     <footer id="about" className="bg-accent text-accent-foreground py-16">
       <div className="container mx-auto px-4">
@@ -54,7 +65,8 @@ export const Footer = () => {
               <img 
                 src={logo} 
                 alt="Sculpt and Strive Logo" 
-                className="h-16 w-auto object-contain"
+                className="h-16 w-auto object-contain cursor-pointer"
+                onClick={handleNavigation}
               />
               <span className="font-display font-bold text-xl">Sculpt and Strive</span>
             </div>

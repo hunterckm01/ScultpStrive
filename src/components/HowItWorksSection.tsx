@@ -71,7 +71,7 @@ export const HowItWorksSection = () => {
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-2 h-2 bg-primary rounded-full" />
         <div className="absolute top-40 right-20 w-3 h-3 bg-secondary rounded-full" />
-        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-accent rounded-full" />
+        {/* <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-accent rounded-full" /> */}
       </div>
 
       <div className="container mx-auto px-4">
@@ -149,10 +149,11 @@ export const HowItWorksSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <Button variant="hero" size="xl">
-            Start Your Journey Today
-            <ArrowRight className="w-5 h-5" />
-          </Button>
+            <Button variant="hero" size="xl" >
+              Start Your Journey Today
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+
           <p className="text-sm text-muted-foreground mt-4">
             Free assessment • No commitment required
           </p>

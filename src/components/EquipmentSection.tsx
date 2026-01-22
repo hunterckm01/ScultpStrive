@@ -11,6 +11,8 @@ import {
   Flame,
   Target
 } from "lucide-react";
+import { useState } from "react";
+import { AuthModal } from "./auth/AuthModal";
 
 const equipmentTypes = [
   {
