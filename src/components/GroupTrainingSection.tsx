@@ -97,7 +97,7 @@ export const GroupTrainingSection = () => {
 
         {/* CTA Row */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <div className="flex -space-x-3">
               {[1, 2, 3, 4].map((i) => (
                 <div
@@ -107,11 +107,11 @@ export const GroupTrainingSection = () => {
                   {["S", "M", "J", "K"][i - 1]}
                 </div>
               ))}
-            </div>
-            <div className="text-accent-foreground/80">
+            </div> */}
+            {/* <div className="text-accent-foreground/80">
               <span className="font-semibold text-accent-foreground">500+</span> members active this week
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
           
           <Button variant="hero" size="lg">
             Find Your Group

@@ -55,6 +55,17 @@
     --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 
+    /* Color Psychology Program Colors */
+      --nurturing: 340 45% 55%;
+      --vitality: 25 85% 55%;
+      --trust: 215 50% 40%;
+      --empowerment: 280 45% 55%;
+      --growth: 145 55% 42%;
+      --transformation: 15 75% 50%;
+      --calm: 175 50% 45%;
+      --strength: 220 30% 25%;
+      --freedom: 200 70% 50%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 215 50% 23%;

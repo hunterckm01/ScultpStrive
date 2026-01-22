@@ -124,7 +124,7 @@ const plans = [
   }
 ]
 
-export const PlanSection = () => {
+export const PlansSection = () => {
     return(
         <section id = "plan" className="py-20 mt-10 relative overflow-hidden">
             <div className="container mx-auto px-8 relative z-10 ">
@@ -134,7 +134,7 @@ export const PlanSection = () => {
                 <div className="grid md:grid-cols-3 gap-4 py-8">
                     {
                         plans.map((plan, index) => (
-                            <div className="flex flex-col gap-4 border rounded-xl py-6 px-4 transition-all duration-100 hover:shadow-glow justify-between">
+                            <div className="flex flex-col gap-4 border rounded-xl py-6 px-4 transition-all duration-100 hover:shadow-glow justify-between animate-slide-up">
                                 {plan.tag ? <div className=" text-center text-sm text-yellow-600 font-semibold flex gap-1 items-center justify-center"><Star size={14}/><p> Popular</p>
                                 </div> : <></>}
                                 <h2 className="text-xl font-semibold text-center ">{plan.name}</h2>

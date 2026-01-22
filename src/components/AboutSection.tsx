@@ -39,7 +39,7 @@ export const AboutSection = () => {
                 <div className="max-w-2xl mx-auto grid grid-cols-2 gap-4 py-6">
                     {
                         trainerInfo.map((trainer, index)=>(
-                            <div className="flex flex-col gap-4 border rounded-xl  hover:transition-all hover:duration-200 hover:shadow-glow px-4 py-2">
+                            <div className="flex flex-col gap-4 border rounded-xl  hover:transition-all hover:duration-200 hover:shadow-glow px-4 py-2 animate-slide-up">
                                 <h2 className = "text-xl font-bold text-center">{trainer.name}</h2>
                                 <div>Certifications</div>
                                 <ul className="flex flex-col gap-2">
@@ -61,7 +61,7 @@ export const AboutSection = () => {
                 {/* About Us Stats */}
                 <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto mb-12">
                     {aboutUsStats.map((stat) => (
-                        <div key = {stat.label} className="text-center border py-3 px-2 rounded-md hover:shadow-glow">
+                        <div key = {stat.label} className="text-center border py-3 px-2 rounded-md hover:shadow-glow animate-slide-up">
                             <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-3 backdrop-blur-sm">
                                 <stat.icon className="w-6 h-6 text-secondary"/>
                             </div>

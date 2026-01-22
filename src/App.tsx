@@ -6,13 +6,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { NewTrainerSection } from "./components/NewTrainerSection";
-import { PlanSection } from "./components/PlanSection";
-import { AboutSection } from "./components/AboutSection";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import Programs from "./pages/Programs";
+import ScrollToTop from "./components/ScrollToTop";
+import About from "./pages/About";
+import Plan from "./pages/Plan";
+import Trainers from "./pages/Trainers";
+import Assessments from "./pages/Assessments";
+import Nutrition from "./pages/Nutrition";
 
 const queryClient = new QueryClient();
+
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -21,12 +26,16 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop/>
           <Header />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path = "/plan" element = {<PlanSection/>}/>
-            <Route path = "/about" element = {<AboutSection/>}/>
-            <Route path = "/trainers" element = {<NewTrainerSection/>}/>
+            <Route path = "/programs" element = {<Programs/>}/>
+            <Route path = "/assessments" element = {<Assessments/>}/>
+            <Route path = "/nutrition" element = {<Nutrition/>}/>
+            <Route path = "/about" element = {<About/>}/>
+            <Route path = "/trainers" element = {<Trainers/>}/>
+            <Route path = "/plan" element = {<Plan/>}/>
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

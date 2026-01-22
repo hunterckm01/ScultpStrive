@@ -238,7 +238,7 @@ export const NutritionSection = () => {
             <NutritionAnalytics />
           </div>
         ) : (
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 items-start animate-slide-up">
             {/* Left Side - Food Database Browser */}
             <Card variant="elevated" className="p-6">
               <div className="flex items-center justify-between mb-6">

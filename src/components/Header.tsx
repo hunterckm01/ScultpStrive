@@ -3,25 +3,28 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/sculpt-and-strive-logo.jpg";
 import { NavLink } from "react-router-dom";
+import { AuthModal } from "./auth/AuthModal";
 
 const navLinks = [
-  { label: "Programs", href: "#programs" },
-  { label: "Assessments", href: "#assessments" },
-  { label: "Nutrition", href: "#nutrition" },
+  { label: "Programs", path: "/programs" },
+  { label: "Assessments", path: "/assessments" },
+  { label: "Nutrition", path: "/nutrition" },
   { label: "About", path: "/about" },
   { label: "Trainers", path: "/trainers" },
   { label: "Get Plan", path: "/plan" },
 ];
 
+
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/30">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
+          <NavLink to = "/" className="flex items-center gap-3">
             <img 
               src={logo} 
               alt="Sculpt and Strive Logo" 
@@ -30,19 +33,11 @@ export const Header = () => {
             <span className="font-display font-bold text-xl text-foreground hidden sm:block">
               Sculpt and Strive
             </span>
-          </a>
+          </NavLink>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              link.href ? 
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-200"
-              >
-                {link.label}
-              </a> : 
               <NavLink to = {link.path} className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-200">
                 {link.label}
               </NavLink>
@@ -51,7 +46,7 @@ export const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" onClick={() => setAuthModalOpen(true)}>
               Login
             </Button>
             <Button variant="hero" size="default">
@@ -75,18 +70,18 @@ export const Header = () => {
           <div className="container mx-auto px-4 py-6">
             <nav className="flex flex-col gap-4 mb-6">
               {navLinks.map((link) => (
-                <a
+                <NavLink
                   key={link.label}
-                  href={link.href}
+                  to={link.path}
                   className="text-foreground font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </NavLink>
               ))}
             </nav>
             <div className="flex flex-col gap-3">
-              <Button variant="ghost" className="w-full">
+              <Button variant="ghost" className="w-full"  onClick={() => setAuthModalOpen(true)}>
                 Login
               </Button>
               <Button variant="hero" className="w-full">
@@ -96,6 +91,7 @@ export const Header = () => {
           </div>
         </div>
       )}
+      <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
     </header>
   );
 };

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Shield, Heart, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
+import logo from "@/assets/sculpt-and-strive-logo.jpg";
 
 export const HeroSection = () => {
   const [email, setEmail] = useState("");
@@ -31,8 +32,36 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 pb-12">
-      {/* Simple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
+      {/* Enhanced multi-layer gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-background to-secondary/8" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-primary/5" />
+      
+      {/* Logo watermark - large centered */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage: `url(${logo})`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          filter: 'grayscale(100%)',
+        }}
+      />
+      
+      {/* Floating orbs for depth */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-accent/5 rounded-full blur-2xl" />
+      
+      {/* Subtle grid pattern */}
+      <div 
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px',
+        }}
+      />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
@@ -65,7 +94,7 @@ export const HeroSection = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 h-14 bg-card border-border rounded-xl text-base px-5"
+                  className="flex-1 h-14 bg-card/80 backdrop-blur-sm border-border rounded-xl text-base px-5"
                   disabled={isSubmitting}
                 />
                 <Button 

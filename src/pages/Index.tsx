@@ -23,7 +23,6 @@ import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { AboutSection } from "@/components/AboutSection";
 import { NewTrainerSection } from "@/components/NewTrainerSection";
-import { PlanSection } from "@/components/PlanSection";
 
 const Index = () => {
   return (
@@ -34,19 +33,21 @@ const Index = () => {
         <PhilosophySection />
         <StatsSection />
         <HowItWorksSection />
-        <ProgramsSection />
-        <LevelsSection />
         <AssessmentQuiz />
-        <AssessmentSection />
-        <EquipmentSection />
-        <NutritionSection />
-        <ChallengesSection />
-        <LeaderboardSection />
-        <AchievementsSection />
-        <UserDashboard />
+        {/* AssessmentSection */}
+        {/* EquipmentSection */}
+        {/* <NutritionSection /> */}
+
+        {/* As Guided to remove this and will be implemented on Dashboard Further  */}
+
+        {/* <ChallengesSection />  */}
+        {/* <LeaderboardSection />  */}
+        {/* <AchievementsSection />  */}
+        {/* <UserDashboard /> */}
+
         <FeaturesSection />
-        <GroupTrainingSection />
-        <TrainerSection />
+        {/* <GroupTrainingSection /> */}
+        {/* <TrainerSection /> */}
         <TestimonialsSection />
         <PricingSection />
         <FAQSection />
