@@ -22,7 +22,7 @@ export const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/30">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex  justify-between h-20">
           {/* Logo */}
           <NavLink to = "/" className="flex items-center gap-3">
             <img 
@@ -30,7 +30,7 @@ export const Header = () => {
               alt="Sculpt and Strive Logo" 
               className="h-14 w-auto object-contain"
             />
-            <span className="font-display font-bold text-xl text-foreground hidden sm:block">
+            <span className="font-display font-bold text-xl text-foreground block">
               Sculpt and Strive
             </span>
           </NavLink>
@@ -44,7 +44,7 @@ export const Header = () => {
             ))}
           </nav>
 
-          <p className="font-display font-bold text-xl text-foreground block sm:hidden">Sculpt and Strive</p>
+          {/* <p className="font-display font-bold text-xl text-foreground block sm:hidden">Sculpt and Strive</p> */}
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
