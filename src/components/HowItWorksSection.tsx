@@ -149,12 +149,10 @@ export const HowItWorksSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <a href="https://calendly.com/sculptandstrive/30min" target="_blank">
-            <button  className="group hover:scale-105 cursor-pointer" >
-              Start Your Journey Today
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </a>
+            <Button variant="hero" size="xl">
+            Start Your Journey Today
+            <ArrowRight className="w-5 h-5" />
+          </Button>
 
           <p className="text-sm text-muted-foreground mt-4">
             Free assessment • No commitment required

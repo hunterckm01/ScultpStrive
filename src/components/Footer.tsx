@@ -140,7 +140,7 @@ export const Footer = () => {
             <a href="#" className="text-accent-foreground/50 hover:text-primary transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-accent-foreground/50 hover:text-primary transition-colors">
+            <a href="https://www.vigomerge.com/" className="text-accent-foreground/50 hover:text-primary transition-colors" target="_blank">
               Designed by Vigomerge Inc.
             </a>
           </div>
