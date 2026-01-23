@@ -23,6 +23,7 @@ import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { AboutSection } from "@/components/AboutSection";
 import { NewTrainerSection } from "@/components/NewTrainerSection";
+import { RealLifeFitnessSection } from "@/components/RealLifeFitnessSection";
 
 const Index = () => {
   return (
@@ -30,6 +31,7 @@ const Index = () => {
       
       <main>
         <HeroSection />
+        <RealLifeFitnessSection/>
         <PhilosophySection />
         <StatsSection />
         <HowItWorksSection />

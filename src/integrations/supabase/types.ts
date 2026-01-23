@@ -124,6 +124,60 @@ export type Database = {
         }
         Relationships: []
       }
+      lifestyle_quiz_results: {
+        Row: {
+          consistency_score: number
+          created_at: string
+          energy_answer: string
+          flexibility_score: number
+          id: string
+          intensity_score: number
+          pain_answer: string
+          recommended_approach: string
+          recovery_score: number
+          schedule_answer: string
+          sleep_answer: string
+          stress_answer: string
+          time_answer: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          consistency_score?: number
+          created_at?: string
+          energy_answer: string
+          flexibility_score?: number
+          id?: string
+          intensity_score?: number
+          pain_answer: string
+          recommended_approach: string
+          recovery_score?: number
+          schedule_answer: string
+          sleep_answer: string
+          stress_answer: string
+          time_answer: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          consistency_score?: number
+          created_at?: string
+          energy_answer?: string
+          flexibility_score?: number
+          id?: string
+          intensity_score?: number
+          pain_answer?: string
+          recommended_approach?: string
+          recovery_score?: number
+          schedule_answer?: string
+          sleep_answer?: string
+          stress_answer?: string
+          time_answer?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       nutrition_logs: {
         Row: {
           calories: number

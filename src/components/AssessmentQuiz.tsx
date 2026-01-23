@@ -457,10 +457,10 @@ export const AssessmentQuiz = () => {
                     <div className="flex items-center gap-4">
                       <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
                         isSelected 
-                          ? 'border-sky-600 bg-terracotta-500' 
+                          ? 'border-primary bg-primary' 
                           : 'border-muted-foreground'
                       }`}>
-                        {isSelected && <CheckCircle2 className="w-4 h-4 text-white" />}
+                        {isSelected && <CheckCircle2 className="w-4 h-4 text-slate-100" />}
                       </div>
                       <div>
                         <p className={`font-semibold ${isSelected ? 'text-terracotta-700' : 'text-foreground'}`}>
