@@ -132,7 +132,7 @@ export const HeroSection = () => {
           {/* Social Proof Stats - Clean Row */}
           <div className="flex items-center justify-center gap-8 md:gap-12 animate-fade-in" style={{ animationDelay: "0.4s" }}>
             {[
-              { number: "14,000+", label: "Happy Members" },
+              { number: "20+", label: "Happy Members" },
               { number: "98%", label: "Success Rate" },
               { number: "2+", label: "Expert Trainers" },
             ].map((stat, i) => (

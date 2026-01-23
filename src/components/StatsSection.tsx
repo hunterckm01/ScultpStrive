@@ -131,7 +131,7 @@ export const StatsSection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-card/10 backdrop-blur-sm mb-4">
-                <stat.icon className="w-6 h-6 text-primary" />
+                <stat.icon className="w-6 h-6 text-white" />
               </div>
               <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               <div className="font-semibold text-accent-foreground mt-1">{stat.label}</div>

@@ -3,7 +3,7 @@ import { MotiveCard } from "./MotiveCard"
 
 const aboutUsStats = [
     {value: "20+", label: "ACTIVE MEMBERS", icon: Users},
-    {value: "2", label: "EXPERT TRAINERS", icon: Award},
+    {value: "2+", label: "EXPERT TRAINERS", icon: Award},
     {value: "10+", label: "YEARS EXPERIENCE", icon: Target}
 ]
 

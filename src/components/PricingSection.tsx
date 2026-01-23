@@ -133,14 +133,16 @@ export const PricingSection = () => {
               </ul>
 
               {/* CTA */}
-              <Button 
-                variant={plan.popular ? "glass" : "hero"} 
-                className={`w-full ${plan.popular ? "text-primary-foreground border-white/30 hover:bg-white/20" : ""}`}
-                size="lg"
-              >
-                {plan.cta}
-                <ArrowRight className="w-4 h-4" />
-              </Button>
+              <a href = "https://calendly.com/sculptandstrive/30min" target="_blank">
+                <Button 
+                  variant={plan.popular ? "glass" : "hero"} 
+                  className={`w-full ${plan.popular ? "text-primary-foreground border-white/30 hover:bg-white/20" : ""}`}
+                  size="lg"
+                  >
+                  {plan.cta}
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </a>
             </Card>
           ))}
         </div>

@@ -203,7 +203,7 @@ export const TestimonialsSection = () => {
                   <span className="font-display font-bold text-lg">TW</span>
                 </div>
                 <div>
-                  <div className="font-semibold">Thomas Williams</div>
+                  <div className="font-semibold"></div>
                   <div className="text-sm opacity-80">Senior Vitality Program • 14 months</div>
                 </div>
               </div>

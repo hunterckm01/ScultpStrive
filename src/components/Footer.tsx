@@ -7,6 +7,7 @@ import {
   Phone,
   MapPin 
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import logo from "@/assets/sculpt-and-strive-logo.jpg";
 import { useNavigate } from "react-router-dom";
 
@@ -38,10 +39,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/sculpt.and.strive/", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61576293194411", label: "Facebook" },
+  { icon: Youtube, href: "https://www.youtube.com/@SculptAndStrive", label: "YouTube" },
+  { icon: FaWhatsapp, href: "https://api.whatsapp.com/message/WGFG665AKDQ4B1?autoload=1&app_absent=0&utm_source=ig", label: "Twitter" },
 ];
 
 export const Footer = () => {
@@ -99,6 +100,7 @@ export const Footer = () => {
                   href={social.href}
                   aria-label={social.label}
                   className="w-10 h-10 rounded-xl bg-accent-foreground/10 flex items-center justify-center text-accent-foreground/70 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  target = "_blank"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
