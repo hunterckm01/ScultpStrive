@@ -4,9 +4,9 @@ import { AuthModal } from "./auth/AuthModal";
 import { useState } from "react";
 
 const trustStats = [
-  { value: "50,000+", label: "Lives Transformed", icon: Users },
+  { value: "14,400+", label: "Lives Transformed", icon: Users },
   { value: "98%", label: "Client Satisfaction", icon: Star },
-  { value: "15+", label: "Years of Excellence", icon: Award },
+  { value: "10+", label: "Years of Excellence", icon: Award },
 ];
 
 const miniTestimonials = [
@@ -168,7 +168,7 @@ export const CTASection = () => {
         </div>
 
         {/* Trust Badge */}
-        <div className="mt-10 flex items-center justify-center gap-3">
+        {/* <div className="mt-10 flex items-center justify-center gap-3">
           <div className="flex -space-x-2">
             {["S", "M", "J", "A", "R"].map((initial, i) => (
               <div
@@ -178,11 +178,11 @@ export const CTASection = () => {
                 {initial}
               </div>
             ))}
-          </div>
-          <p className="text-white/80 text-sm">
+          </div> */}
+          {/* <p className="text-white/80 text-sm">
             <span className="font-bold text-white">2,847</span> people started their journey this week
-          </p>
-        </div>
+          </p> */}
+        {/* </div> */}
       </div>
     </section>
   );

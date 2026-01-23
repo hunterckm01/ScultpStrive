@@ -51,9 +51,11 @@ export const Header = () => {
             <Button variant="ghost" size="sm" onClick={() => setAuthModalOpen(true)}>
               Login
             </Button>
+            <a href = "https://calendly.com/sculptandstrive/30min" target = "_blank">
             <Button variant="hero" size="default">
               Start Your Journey
             </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}

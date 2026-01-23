@@ -244,7 +244,7 @@ export const AssessmentQuiz = () => {
           <Card variant="elevated" className="max-w-3xl mx-auto">
             <CardContent className="p-8 md:p-12 text-center">
               <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-terracotta-500 to-terracotta-600 flex items-center justify-center mb-6">
-                <Target className="w-10 h-10 text-white" />
+                <Target className="w-10 h-10 text-hero" />
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
                 Find Your Perfect Starting Point

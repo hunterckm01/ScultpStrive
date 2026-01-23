@@ -17,9 +17,9 @@ import {
 const features = [
   {
     icon: Brain,
-    title: "AI-Powered Programming",
-    description: "Smart algorithms adapt your workouts based on progress, recovery, and goals in real-time.",
-    category: "Technology",
+    title: "Positive Mindset",
+    description: "Stay patient and kind to yourself. Fitness is a journey—every small step counts toward your goals.",
+    category: "Mindset",
   },
   {
     icon: Video,

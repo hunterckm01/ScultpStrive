@@ -69,8 +69,8 @@ export const HowItWorksSection = () => {
     <section className="py-24 relative overflow-hidden bg-muted/20">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-primary rounded-full" />
-        <div className="absolute top-40 right-20 w-3 h-3 bg-secondary rounded-full" />
+        {/* <div className="absolute top-20 left-10 w-2 h-2 bg-primary rounded-full" /> */}
+        {/* <div className="absolute top-40 right-20 w-3 h-3 bg-secondary rounded-full" /> */}
         {/* <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-accent rounded-full" /> */}
       </div>
 
@@ -118,7 +118,7 @@ export const HowItWorksSection = () => {
                   {/* Icon */}
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${
                     step.color === 'primary' ? 'gradient-hero' : 
-                    step.color === 'secondary' ? 'gradient-sage' : 'gradient-dark'
+                    step.color === 'secondary' ? 'gradient-dark' : 'gradient-dark'
                   }`}>
                     <step.icon className={`w-7 h-7 ${
                       step.color === 'accent' ? 'text-accent-foreground' : 
@@ -149,10 +149,12 @@ export const HowItWorksSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
+          <a href="https://calendly.com/sculptandstrive/30min" target="_blank">
             <Button variant="hero" size="xl" >
               Start Your Journey Today
               <ArrowRight className="w-5 h-5" />
             </Button>
+          </a>
 
           <p className="text-sm text-muted-foreground mt-4">
             Free assessment • No commitment required

@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, ArrowRight, TrendingUp, Scale, Heart } from "lucide-react";
+import { useState } from "react";
 
 const testimonials = [
   {
@@ -76,9 +77,87 @@ const testimonials = [
     verified: true,
     parentTestimonial: true,
   },
+  {
+   name: "Raghini Patwardhan",
+    age: 36,
+    program: "Women's Fitness",
+    quote: "Sculpt & Strive has improved my strength, stamina, and confidence more than I ever imagined. The trainers guide you through every step and make fitness feel achievable. Every session is energetic, structured, and truly result-driven!",
+    rating: 5,
+    avatar: "SM",
+    result: "Increase Strength by 60%",
+    resultIcon: TrendingUp,
+    duration: "9 months",
+    verified: true,
+  },
+  {
+    name: "Rahul Singhaniya",
+    age: 30,
+    program: "Travel & Bodyweight",
+    quote: "Yoga has become a natural part of my life. I've lost 2 kg and am aiming to lose 3 more, confident that I will achieve it with continued effort. The changes in my nutrition have also been significant. Habuild has helped me change my lifestyle, which seem difficult earlier.",
+    rating: 5,
+    avatar: "SM",
+    result: "Increase Confidence by 50%",
+    resultIcon: TrendingUp,
+    duration: "9 months",
+    verified: true,
+  },
+   {
+   name: "Arita",
+    age: 32,
+    program: "Core & Strength",
+    quote: "My posture, flexibility, and core strength improved drastically within just three months. The energy, structure, and support at Sculpt & Strive are on another level. Truly a life-changing experience!",
+    rating: 5,
+    avatar: "SM",
+    result: "Increase Flexiblity by 60%",
+    resultIcon: TrendingUp,
+    duration: "12 months",
+    verified: true,
+  },
+   {
+   name: "Rajesh Kotwal",
+    age: 36,
+    program: "Travel & Bodyweight",
+    quote: "Sculpt and Strive has transformed my fitness journey — with expert trainers, amazing support, and a motivating community!",
+    rating: 5,
+    avatar: "SM",
+    result: "Increase Strength by 60%",
+    resultIcon: TrendingUp,
+    duration: "12 Months",
+    verified: true,
+  },
+   {
+   name: "Sriraman Nagarajan",
+    age: 36,
+    program: "Corrective Exercise",
+    quote: "Sagar has been my trainer over the last one year. Having worked with others in the past, a few things that stand out from him as a coach are A. Dedication to what he does B. On time every time. No matter which part of the world he is in, he makes sure he is ready for the class and never misses them C. Deep care about his students like me D. Bringing in all his knowledge and introducing newer methods periodically"
+    ,
+    rating: 5,
+    avatar: "SM",
+    result: "Increase Strength by 60%",
+    resultIcon: TrendingUp,
+    duration: "8 months",
+    verified: true,
+  },
+   {
+   name: "Raghini Patwardhan",
+    age: 36,
+    program: "Women's Fitness",
+    quote: "Sculpt & Strive has improved my strength, stamina, and confidence more than I ever imagined. The trainers guide you through every step and make fitness feel achievable. Every session is energetic, structured, and truly result-driven!",
+    rating: 5,
+    avatar: "SM",
+    result: "Increase Stamin by 30%",
+    resultIcon: TrendingUp,
+    duration: "9 months",
+    verified: true,
+  },
+
 ];
 
 export const TestimonialsSection = () => {
+  const REVIEWS_PER_LOAD = 6;
+  const [visibleCount, setVisibleCount] = useState(REVIEWS_PER_LOAD);
+  
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background gradient */}
@@ -131,10 +210,10 @@ export const TestimonialsSection = () => {
             </div>
             <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl">
               <TrendingUp className="w-10 h-10 mx-auto mb-3" />
-              <div className="font-display text-4xl font-bold mb-1">35%</div>
+              <div className="font-display text-4xl font-bold mb-1">85%</div>
               <div className="text-sm opacity-80">Strength Increase</div>
               <div className="h-px bg-white/20 my-4" />
-              <div className="font-display text-4xl font-bold mb-1">50%</div>
+              <div className="font-display text-4xl font-bold mb-1">98%</div>
               <div className="text-sm opacity-80">Better Mobility</div>
             </div>
           </div>
@@ -142,7 +221,7 @@ export const TestimonialsSection = () => {
 
         {/* Testimonial grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.slice(0,visibleCount).map((testimonial, index) => (
             <Card
               key={testimonial.name}
               variant="elevated"
@@ -181,7 +260,7 @@ export const TestimonialsSection = () => {
 
               {/* Quote */}
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed relative z-10">
-                "{testimonial.quote}"
+                {testimonial.quote.split(" ").length <= 50 ? testimonial.quote: testimonial.quote.split(" ").slice(0,50).join(" ") + "..."}
               </p>
 
               {/* Result badge */}
@@ -202,10 +281,20 @@ export const TestimonialsSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
+          {visibleCount < testimonials.length && (
+          <Button
+            variant="hero"
+            size="lg"
+            onClick={() =>
+              setVisibleCount(prev =>
+                Math.min(prev + REVIEWS_PER_LOAD, testimonials.length)
+              )
+            }
+          >
             Read More Success Stories
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
+        )}
           <p className="text-sm text-muted-foreground mt-4">
             Over 500+ verified transformations
           </p>

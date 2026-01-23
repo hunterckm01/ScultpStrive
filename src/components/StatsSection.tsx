@@ -4,14 +4,14 @@ import { Users, Dumbbell, Trophy, Clock, TrendingUp, Heart } from "lucide-react"
 const stats = [
   {
     icon: Users,
-    value: 10000,
+    value: 20,
     suffix: "+",
     label: "Active Members",
     description: "Transforming lives globally",
   },
   {
     icon: Dumbbell,
-    value: 500,
+    value: 50,
     suffix: "+",
     label: "Workout Programs",
     description: "For every goal & level",
@@ -25,7 +25,7 @@ const stats = [
   },
   {
     icon: Clock,
-    value: 50000,
+    value: 260,
     suffix: "+",
     label: "Training Hours",
     description: "Delivered monthly",

@@ -190,10 +190,12 @@ export const RealLifeFitnessSection = () => {
 
         {/* CTA */}
         <div className="max-w-xl mx-auto text-center bg-card/80 backdrop-blur-sm rounded-3xl p-8 border border-border/50">
-          <Button variant="hero" size="xl" className="mb-4 group">
-            Try Sculpt & Strive Risk-Free
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <a href = "https://calendly.com/sculptandstrive/30min" target = "_blank">
+            <Button variant="hero" size="xl" className="mb-4 group">
+              Try Sculpt & Strive Risk-Free
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
           <p className="text-sm text-muted-foreground mb-2">
             If it doesn't feel right within 14 days, you get a full refund.
           </p>

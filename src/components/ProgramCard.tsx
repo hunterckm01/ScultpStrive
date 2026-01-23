@@ -63,9 +63,9 @@ export const ProgramCard = ({
             </li>
           ))}
         </ul>
-        <Button variant="ghost" className="p-0 h-auto text-primary group-hover:gap-3 transition-all">
+        {/* <Button variant="ghost" className="p-0 h-auto text-primary group-hover:gap-3 transition-all">
           Learn More <ArrowRight className="w-4 h-4" />
-        </Button>
+        </Button> */}
       </CardContent>
     </Card>
   );
