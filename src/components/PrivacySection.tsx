@@ -108,7 +108,7 @@ export const PrivacySection = () => {
       <div className="  px-28 relative z-10">
 
       {privacyPolicyData.map((section, index) => (
-          <div key={index} className="mb-8">
+          <div key={index} className="mb-8 animate-pulse">
           <h2 className="text-xl font-bold mb-3">{section.title}</h2>
 
           {section.content?.map((text, i) => (

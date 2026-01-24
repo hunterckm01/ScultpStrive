@@ -92,22 +92,24 @@ export const Header = () => {
                 </NavLink>
               ))}
             </nav>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 items-center">
               <Button
-                variant="ghost"
-                className="w-full"
+              variant="glass"
+                // variant="ghost"
+                className=""
                 onClick={() => setAuthModalOpen(true)}
               >
                 Login
               </Button>
-              <a
-                href="https://calendly.com/sculptandstrive/30min"
-                target="_blank"
-              >
-                <Button variant="hero" size="default">
+              
+                <Button variant="hero" size="default" asChild>
+                    <a
+                  href="https://calendly.com/sculptandstrive/30min"
+                  target="_blank"
+                >
                   Start Your Journey
+                </a>
                 </Button>
-              </a>
             </div>
           </div>
         </div>

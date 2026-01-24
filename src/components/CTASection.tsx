@@ -10,9 +10,36 @@ const trustStats = [
 ];
 
 const miniTestimonials = [
-  { name: "Sarah M.", quote: "Finally found a program that fits MY life, not the other way around.", avatar: "S" },
-  { name: "David L.", quote: "At 62, I'm in the best shape of my life. Wish I found them sooner.", avatar: "D" },
-  { name: "Priya K.", quote: "Post-baby body transformation was gentle yet effective. Truly understanding.", avatar: "P" },
+  {
+    name: "Vijay patil",
+    quote:
+      "Sculpt and Strive is an amazing online fitness platform. The workouts are effective, well-planned, and easy to follow. The trainers are motivating and make every session enjoyable.",
+    avatar: "V",
+  },
+  {
+    name: "Sanjay Singh",
+    quote:
+      "I love how Sculpt and Strive keeps me consistent with my fitness goals. The online classes are energetic, challenging, and perfect for working out from home. Highly recommended!",
+    avatar: "S",
+  },
+  {
+    name: "Prashant Seth",
+    quote:
+      "These online fitness classes are great for all fitness levels. Sculpt and Strive provides clear instructions and excellent guidance. I’ve noticed real improvements in my strength and stamina..",
+    avatar: "P",
+  },
+  // {
+  //   name: "Pravesh sadashiv",
+  //   quote:
+  //     "Sculpt and Strive has transformed my daily routine. The workouts are time-efficient and deliver real results. It feels like having a personal trainer at home!",
+  //   avatar: "P",
+  // },
+  // {
+  //   name: "Manpreet Singh",
+  //   quote:
+  //     "The best part about Sculpt and Strive is the positive energy and support. The online classes are fun, motivating, and well-structured. Totally worth it!",
+  //   avatar: "M",
+  // },
 ];
 
 const guarantees = [
@@ -26,7 +53,7 @@ export const CTASection = () => {
     <section className="relative py-24 md:py-32 overflow-hidden">
       {/* Premium gradient background */}
       <div className="absolute inset-0 gradient-hero" />
-      
+
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute top-10 left-[10%] w-72 h-72 bg-white/5 rounded-full blur-3xl" />
@@ -51,20 +78,34 @@ export const CTASection = () => {
             <br />
             <span className="relative">
               Starts Today
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                <path d="M2 10C50 3 150 3 298 10" stroke="hsl(var(--secondary))" strokeWidth="4" strokeLinecap="round"/>
+              <svg
+                className="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 300 12"
+                fill="none"
+              >
+                <path
+                  d="M2 10C50 3 150 3 298 10"
+                  stroke="hsl(var(--secondary))"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
               </svg>
             </span>
           </h2>
 
           {/* Emotional Subheadline */}
           <p className="text-xl md:text-2xl text-white/90 font-medium mb-4 max-w-2xl mx-auto leading-relaxed">
-            Join thousands who stopped waiting for "someday" and started living their{" "}
-            <span className="text-secondary font-bold">healthiest, happiest life</span>.
+            Join thousands who stopped waiting for "someday" and started living
+            their{" "}
+            <span className="text-secondary font-bold">
+              healthiest, happiest life
+            </span>
+            .
           </p>
 
           <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto">
-            Every body deserves a program that respects where they are and celebrates where they're going.
+            Every body deserves a program that respects where they are and
+            celebrates where they're going.
           </p>
         </div>
 
@@ -86,11 +127,11 @@ export const CTASection = () => {
         </div>
 
         {/* Mini Testimonials */}
-        <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
+        <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12 ">
           {miniTestimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:bg-white/15 transition-all duration-300 group"
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:bg-white/15 transition-all duration-300 group "
             >
               <Quote className="w-6 h-6 text-secondary/60 mb-3 group-hover:text-secondary transition-colors" />
               <p className="text-white/90 text-sm mb-4 leading-relaxed italic">
@@ -100,10 +141,15 @@ export const CTASection = () => {
                 <div className="w-8 h-8 rounded-full bg-secondary/30 flex items-center justify-center text-white text-sm font-bold">
                   {testimonial.avatar}
                 </div>
-                <span className="text-white/70 text-sm font-medium">{testimonial.name}</span>
+                <span className="text-white/70 text-sm font-medium">
+                  {testimonial.name}
+                </span>
                 <div className="flex ml-auto">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 text-secondary fill-secondary" />
+                    <Star
+                      key={i}
+                      className="w-3 h-3 text-secondary fill-secondary"
+                    />
                   ))}
                 </div>
               </div>
@@ -131,21 +177,27 @@ export const CTASection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
+          <a
+            href="https://calendly.com/sculptandstrive/30min?month=2025-09"
+            target="_blank"
+          >
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-white/90 font-bold px-10 py-6 text-lg rounded-xl shadow-2xl shadow-black/20 group transition-all duration-300 hover:scale-105"
-              >
+            >
               Start Your Free Trial
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </a>
-          <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
+          <a
+            href="https://calendly.com/sculptandstrive/30min?month=2025-09"
+            target="_blank"
+          >
             <Button
               variant="outline"
               size="lg"
               className="border-2 border-white/30 text-white bg-transparent hover:bg-white/10 font-semibold px-8 py-6 text-lg rounded-xl backdrop-blur-sm"
-              >
+            >
               See How It Works
             </Button>
           </a>
@@ -179,7 +231,7 @@ export const CTASection = () => {
               </div>
             ))}
           </div> */}
-          {/* <p className="text-white/80 text-sm">
+        {/* <p className="text-white/80 text-sm">
             <span className="font-bold text-white">2,847</span> people started their journey this week
           </p> */}
         {/* </div> */}

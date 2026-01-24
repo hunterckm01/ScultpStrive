@@ -65,15 +65,16 @@ export const FAQSection = () => {
               <span className="text-gradient-hero">Questions</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Everything you need to know about starting your transformation journey.
+              Everything you need to know about starting your transformation
+              journey.
             </p>
           </div>
 
           {/* Accordion */}
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
+              <AccordionItem
+                key={index}
                 value={`item-${index}`}
                 className="bg-card border border-border/50 rounded-2xl px-6 data-[state=open]:shadow-soft transition-all"
               >
@@ -89,18 +90,22 @@ export const FAQSection = () => {
 
           {/* Still have questions */}
           <div className="text-center mt-12 p-8 bg-muted/30 rounded-3xl border border-border/50">
-            <h3 className="font-display text-xl font-bold mb-2">Still have questions?</h3>
+            <h3 className="font-display text-xl font-bold mb-2">
+              Still have questions?
+            </h3>
             <p className="text-muted-foreground mb-6">
-              Our team is here to help you find the perfect program for your goals.
+              Our team is here to help you find the perfect program for your
+              goals.
             </p>
-              <Button variant="hero" size="lg" asChild>
-                <a href="https://api.whatsapp.com/message/WGFG665AKDQ4B1?autoload=1&app_absent=0&utm_source=ig" target="_blank">
-                  <MessageCircle className="w-5 h-5" />
-                  <span>
-                    Chat with Us
-                  </span>
-                </a>
-              </Button> 
+            <Button variant="hero" size="lg" asChild>
+              <a
+                href="https://wa.me/message/WGFG665AKDQ4B1"
+                target="_blank"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Chat with Us</span>
+              </a>
+            </Button>
           </div>
         </div>
       </div>

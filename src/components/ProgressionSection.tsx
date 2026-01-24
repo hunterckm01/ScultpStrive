@@ -96,7 +96,7 @@ export const ProgressionSection = () => {
                             </div>
                             <p className="text-sm text-muted-foreground">{level.focus}</p>
                           </div>
-                          <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                          {/* <ChevronRight className="w-5 h-5 text-muted-foreground" /> */}
                         </div>
                       ))}
                     </div>

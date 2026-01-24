@@ -112,13 +112,18 @@ export const ProgramsSection = () => {
         </div>
       </div>
 
-      <div className="text-center mt-12">
-        <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
-          <Button variant="hero" size="lg">
+      {/* <div className="text-center mt-12">
+        <Button variant="hero" size="lg" asChild>
+          <a
+            href="https://calendly.com/sculptandstrive/30min?month=2025-09"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex"
+          >
             Learn More
-          </Button>
-        </a>
-      </div>
+          </a>
+        </Button>
+      </div> */}
     </section>
   );
 };

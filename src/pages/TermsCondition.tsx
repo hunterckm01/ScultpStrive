@@ -4,7 +4,7 @@ import logo from "@/assets/sculpt-and-strive-logo.jpg";
 
 const TermsCondition = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
+    <div className="flex min-h-screen items-center justify-center bg-muted ">
       <main className="relative min-h-screen pt-16 bg-gray-900 text-gray-300">
         {/* Background Image */}
         <div
