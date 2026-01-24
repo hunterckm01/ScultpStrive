@@ -434,23 +434,38 @@ export const LifestyleQuiz = () => {
           <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">
             Your Ideal Training Approach
           </h3>
-          <p className="text-muted-foreground">Based on your current lifestyle and needs</p>
+          <p className="text-muted-foreground">
+            Based on your current lifestyle and needs
+          </p>
         </div>
 
-        <div className={cn(
-          "bg-gradient-to-br rounded-3xl p-8 border border-border/50 mb-8 animate-scale-in",
-          result.gradient
-        )}>
+        <div
+          className={cn(
+            "bg-gradient-to-br rounded-3xl p-8 border border-border/50 mb-8 animate-scale-in",
+            result.gradient,
+          )}
+        >
           <div className="flex items-start gap-4 mb-6">
-            <div className={cn("w-14 h-14 rounded-2xl bg-background/80 flex items-center justify-center", result.color)}>
+            <div
+              className={cn(
+                "w-14 h-14 rounded-2xl bg-background/80 flex items-center justify-center",
+                result.color,
+              )}
+            >
               <ResultIcon className="w-7 h-7" />
             </div>
             <div>
-              <h4 className={cn("font-display text-2xl font-bold", result.color)}>{result.name}</h4>
-              <p className="text-muted-foreground font-medium">{result.tagline}</p>
+              <h4
+                className={cn("font-display text-2xl font-bold", result.color)}
+              >
+                {result.name}
+              </h4>
+              <p className="text-muted-foreground font-medium">
+                {result.tagline}
+              </p>
             </div>
           </div>
-          
+
           <p className="text-foreground mb-6 leading-relaxed">
             {result.description}
           </p>
@@ -458,12 +473,14 @@ export const LifestyleQuiz = () => {
           <div className="grid grid-cols-2 gap-3">
             {result.features.map((feature, i) => (
               <div key={i} className="flex items-center gap-2 text-sm">
-                <CheckCircle2 className={cn("w-4 h-4 flex-shrink-0", result.color)} />
+                <CheckCircle2
+                  className={cn("w-4 h-4 flex-shrink-0", result.color)}
+                />
                 <span className="text-foreground">{feature}</span>
               </div>
             ))}
           </div>
-          
+
           {!user && (
             <p className="text-sm text-muted-foreground mt-4 text-center">
               Sign up to save your results and track your progress over time!
@@ -472,13 +489,15 @@ export const LifestyleQuiz = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button variant="hero" size="lg" className="flex-1 group">
-            Start Your Personalized Plan
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
+          <a href="https://calendly.com/sculptandstrive/30min" target="_blank">
+            <Button variant="hero" size="lg" className="flex-1 group">
+              Start Your Personalized Plan
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
+          <Button
+            variant="outline"
+            size="lg"
             onClick={handleRestart}
             className="flex items-center gap-2"
           >

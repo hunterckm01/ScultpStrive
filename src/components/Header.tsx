@@ -24,10 +24,10 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex  justify-between h-20">
           {/* Logo */}
-          <NavLink to = "/" className="flex items-center gap-3">
-            <img 
-              src={logo} 
-              alt="Sculpt and Strive Logo" 
+          <NavLink to="/" className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Sculpt and Strive Logo"
               className="h-14 w-auto object-contain"
             />
             <span className="font-display font-bold text-xl text-foreground block">
@@ -38,7 +38,10 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <NavLink to = {link.path} className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-200">
+              <NavLink
+                to={link.path}
+                className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-200"
+              >
                 {link.label}
               </NavLink>
             ))}
@@ -48,13 +51,20 @@ export const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm" onClick={() => setAuthModalOpen(true)}>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setAuthModalOpen(true)}
+            >
               Login
             </Button>
-            <a href = "https://calendly.com/sculptandstrive/30min" target = "_blank">
-            <Button variant="hero" size="default">
-              Start Your Journey
-            </Button>
+            <a
+              href="https://calendly.com/sculptandstrive/30min"
+              target="_blank"
+            >
+              <Button variant="hero" size="default">
+                Start Your Journey
+              </Button>
             </a>
           </div>
 
@@ -85,12 +95,21 @@ export const Header = () => {
               ))}
             </nav>
             <div className="flex flex-col gap-3">
-              <Button variant="ghost" className="w-full"  onClick={() => setAuthModalOpen(true)}>
+              <Button
+                variant="ghost"
+                className="w-full"
+                onClick={() => setAuthModalOpen(true)}
+              >
                 Login
               </Button>
-              <Button variant="hero" className="w-full">
-                Start Your Journey
-              </Button>
+              <a
+                href="https://calendly.com/sculptandstrive/30min"
+                target="_blank"
+              >
+                <Button variant="hero" size="default">
+                  Start Your Journey
+                </Button>
+              </a>
             </div>
           </div>
         </div>

@@ -148,16 +148,17 @@ export const HowItWorksSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
-            <Button variant="hero" size="xl">
-            Start Your Journey Today
-            <ArrowRight className="w-5 h-5" />
-          </Button>
+        {/* <div className="text-center mt-16">
+            <Button  className="group hover:scale-105 cursor-pointer" >
+              Start Your Journey Today
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+       
 
           <p className="text-sm text-muted-foreground mt-4">
             Free assessment • No commitment required
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

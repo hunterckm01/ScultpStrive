@@ -379,10 +379,12 @@ export const AssessmentQuiz = () => {
               
               {/* CTA */}
               <div className="text-center space-y-4">
+                <a href = "https://calendly.com/sculptandstrive/30min" target="_blank">
                 <Button variant="hero" size="xl">
                   Start Your Journey
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
+                </a>
                 <p className="text-sm text-muted-foreground">
                   Or{" "}
                   <button 

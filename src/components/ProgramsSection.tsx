@@ -11,7 +11,7 @@ import {
   Target,
   Sparkles,
 } from "lucide-react";
-import { AuthModal } from "./auth/AuthModal";
+import { Button } from "./ui/button";
 
 const programs = [
   {
@@ -82,10 +82,10 @@ const programs = [
 export const ProgramsSection = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   return (
-    <section id="programs" className="py-24 relative overflow-hidden">
+    <section id="programs" className="py-24 pb-20 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-32 " />
 
       <div className="container mx-auto px-4">
         {/* Section Header */}
@@ -98,23 +98,27 @@ export const ProgramsSection = () => {
             <span className="text-gradient-hero">Every Journey.</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Whether you're preparing for motherhood, seeking senior vitality, or training the next generation — 
-            we have a specialized path designed just for you.
+            Whether you're preparing for motherhood, seeking senior vitality, or
+            training the next generation — we have a specialized path designed
+            just for you.
           </p>
         </div>
 
         {/* Programs Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {programs.map((program, index) => (
-            <ProgramCard
-              key={program.title}
-              {...program}
-              delay={index * 100}
-            />
+            <ProgramCard key={program.title} {...program} delay={index * 100} />
           ))}
         </div>
       </div>
-      <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
+
+      <div className="text-center mt-12">
+        <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
+          <Button variant="hero" size="lg">
+            Learn More
+          </Button>
+        </a>
+      </div>
     </section>
   );
 };
