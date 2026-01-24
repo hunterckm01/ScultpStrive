@@ -93,12 +93,14 @@ export const FAQSection = () => {
             <p className="text-muted-foreground mb-6">
               Our team is here to help you find the perfect program for your goals.
             </p>
-            <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
-              <Button variant="hero" size="lg">
-                <MessageCircle className="w-5 h-5" />
-                Chat with Us
-              </Button>
-            </a>
+              <Button variant="hero" size="lg" asChild>
+                <a href="https://api.whatsapp.com/message/WGFG665AKDQ4B1?autoload=1&app_absent=0&utm_source=ig" target="_blank">
+                  <MessageCircle className="w-5 h-5" />
+                  <span>
+                    Chat with Us
+                  </span>
+                </a>
+              </Button> 
           </div>
         </div>
       </div>

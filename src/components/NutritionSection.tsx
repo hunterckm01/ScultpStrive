@@ -35,6 +35,7 @@ import { MealLoggingForm } from "@/components/nutrition/MealLoggingForm";
 import { CustomFoodForm } from "@/components/nutrition/CustomFoodForm";
 import { NutritionAnalytics } from "@/components/nutrition/NutritionAnalytics";
 import { DietPlanForm } from "@/components/nutrition/DietPlanForm";
+const FOOD_API_KEY = import.meta.env.VITE_FOODBASE_API_KEY
 
 // Types for food database
 interface Food {
@@ -49,6 +50,13 @@ interface Food {
   fats: number;
   fiber: number | null;
 }
+
+// 
+  const getNutrient = (nutrients: any[], name: string) => {
+    const n = nutrients.find((x) => x.nutrient?.name === name);
+    return n ? Math.round(n.amount) : 0;
+  };
+// 
 
 const nutritionGoals = [
   { label: "Weight Loss", icon: Target, color: "bg-primary/10 text-primary" },
@@ -97,32 +105,84 @@ export const NutritionSection = () => {
   const overallAdherence = 86;
 
   useEffect(() => {
-    fetchFoods();
-  }, [selectedRegion, searchQuery]);
-
-  const fetchFoods = async () => {
-    setLoading(true);
-    try {
-      let query = supabase
-        .from("foods")
-        .select("*")
-        .eq("region", selectedRegion)
-        .order("category", { ascending: true });
-
-      if (searchQuery) {
-        query = query.ilike("name", `%${searchQuery}%`);
-      }
-
-      const { data, error } = await query.limit(20);
-      
-      if (error) throw error;
-      setFoods(data || []);
-    } catch (error) {
-      console.error("Error fetching foods:", error);
-    } finally {
-      setLoading(false);
+    if (!searchQuery.trim() || selectedRegion === "India") {
+      setFoods([]);
+      return;
     }
-  };
+
+    const timeout = setTimeout(async () => {
+      setLoading(true);
+      try {
+        //SEARCH
+        const searchRes = await fetch(
+          `https://api.nal.usda.gov/fdc/v1/foods/search?query=${searchQuery}&pageSize=1&api_key=${FOOD_API_KEY}`,
+        );
+        const searchData = await searchRes.json();
+
+        //DETAILS FOR EACH RESULT
+        const detailedFoods: Food[] = await Promise.all(
+          (searchData.foods || []).map(async (item: any) => {
+            const detailRes = await fetch(
+              `https://api.nal.usda.gov/fdc/v1/food/${item.fdcId}?api_key=${FOOD_API_KEY}`,
+            );
+            const detail = await detailRes.json();
+
+            return {
+              id: item.fdcId,
+              name: detail.description,
+              calories: getNutrient(detail.foodNutrients, "Energy"),
+              protein: getNutrient(detail.foodNutrients, "Protein"),
+              fats: getNutrient(detail.foodNutrients, "Total lipid (fat)"),
+              carbs: getNutrient(
+                detail.foodNutrients,
+                "Carbohydrate, by difference",
+              ),
+              serving_size: detail.servingSize
+                ? `${detail.servingSize} ${detail.servingSizeUnit}`
+                : "100 g",
+              category: detail.dataType,
+            };
+          }),
+        );
+
+        setFoods(detailedFoods);
+      } catch (err) {
+        console.error("USDA error:", err);
+      } finally {
+        setLoading(false);
+      }
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [searchQuery, selectedRegion]);
+
+  // useEffect(() => {
+  //   fetchFoods();
+  // }, [selectedRegion, searchQuery]);
+
+  // const fetchFoods = async () => {
+  //   setLoading(true);
+  //   try {
+  //     let query = supabase
+  //       .from("foods")
+  //       .select("*")
+  //       .eq("region", selectedRegion)
+  //       .order("category", { ascending: true });
+
+  //     if (searchQuery) {
+  //       query = query.ilike("name", `%${searchQuery}%`);
+  //     }
+
+  //     const { data, error } = await query.limit(20);
+      
+  //     if (error) throw error;
+  //     setFoods(data || []);
+  //   } catch (error) {
+  //     console.error("Error fetching foods:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const getAdherenceColor = (value: number) => {
     if (value >= 90) return "text-secondary";

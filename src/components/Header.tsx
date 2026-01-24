@@ -58,14 +58,12 @@ export const Header = () => {
             >
               Login
             </Button>
-            <a
-              href="https://calendly.com/sculptandstrive/30min"
-              target="_blank"
-            >
-              <Button variant="hero" size="default">
-                Start Your Journey
+            
+              <Button variant="hero" size="default" asChild>
+                <a href="https://calendly.com/sculptandstrive/30min" target="_blank">
+                  Start Your Journey
+                </a>
               </Button>
-            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
