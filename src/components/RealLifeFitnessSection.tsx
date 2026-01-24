@@ -22,17 +22,17 @@ export const RealLifeFitnessSection = () => {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background">
       {/* Watermark logo */}
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `url(${logo})`,
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          filter: 'grayscale(100%)',
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          filter: "grayscale(100%)",
         }}
       />
-      
+
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
@@ -45,14 +45,18 @@ export const RealLifeFitnessSection = () => {
             <br />
             <span className="text-muted-foreground">Not Ideal Weeks.</span>
           </h2>
-          
+
           <div className="max-w-2xl mx-auto space-y-4 mt-8">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               At Sculpt & Strive, we believe most people don't fail at fitness—
-              <span className="text-foreground font-semibold"> fitness fails them.</span>
+              <span className="text-foreground font-semibold">
+                {" "}
+                fitness fails them.
+              </span>
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              It's built for perfect schedules, endless motivation, and bodies that never get tired, injured, or stressed.
+              It's built for perfect schedules, endless motivation, and bodies
+              that never get tired, injured, or stressed.
             </p>
             <p className="text-lg font-medium text-primary">
               Real life doesn't work like that.
@@ -68,17 +72,21 @@ export const RealLifeFitnessSection = () => {
               <Shield className="w-7 h-7 text-primary" />
             </div>
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              Built to Last — <span className="text-primary">Not Burn You Out</span>
+              Built to Last —{" "}
+              <span className="text-primary">Not Burn You Out</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              We don't believe in extremes, 30-day challenges, or "no excuses" culture.
+              We don't believe in extremes, 30-day challenges, or "no excuses"
+              culture.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              We build fitness that fits your life—through busy seasons, injuries, aging, and restarts.
+              We build fitness that fits your life—through busy seasons,
+              injuries, aging, and restarts.
             </p>
             <div className="bg-primary/5 rounded-xl p-4 border-l-4 border-primary">
               <p className="text-sm font-medium text-foreground italic">
-                "If a program only works when life is calm, it's not a good program."
+                "If a program only works when life is calm, it's not a good
+                program."
               </p>
             </div>
           </div>
@@ -89,7 +97,8 @@ export const RealLifeFitnessSection = () => {
               <Zap className="w-7 h-7 text-secondary" />
             </div>
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              Training That <span className="text-secondary">Adapts to You</span>
+              Training That{" "}
+              <span className="text-secondary">Adapts to You</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Your training adjusts to:
@@ -100,13 +109,22 @@ export const RealLifeFitnessSection = () => {
                   <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
                     <factor.icon className="w-5 h-5 text-secondary" />
                   </div>
-                  <span className="text-foreground font-medium">{factor.label}</span>
+                  <span className="text-foreground font-medium">
+                    {factor.label}
+                  </span>
                 </div>
               ))}
             </div>
             <div className="flex flex-col gap-2 text-sm">
-              <p className="text-muted-foreground">Some days progress is <span className="text-foreground font-semibold">intensity</span>.</p>
-              <p className="text-muted-foreground">Some days progress is <span className="text-foreground font-semibold">recovery</span>.</p>
+              <p className="text-muted-foreground">
+                Some days progress is{" "}
+                <span className="text-foreground font-semibold">intensity</span>
+                .
+              </p>
+              <p className="text-muted-foreground">
+                Some days progress is{" "}
+                <span className="text-foreground font-semibold">recovery</span>.
+              </p>
               <p className="text-primary font-bold mt-2">Both count.</p>
             </div>
           </div>
@@ -119,15 +137,23 @@ export const RealLifeFitnessSection = () => {
               <Heart className="w-8 h-8 text-nurturing" />
             </div>
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              Pain-Aware. Female-Focused. <span className="text-nurturing">Fear-Free.</span>
+              Pain-Aware. Female-Focused.{" "}
+              <span className="text-nurturing">Fear-Free.</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-6">
-              We help you train safely, confidently, and sustainably—especially through life stages that most programs ignore.
+              We help you train safely, confidently, and sustainably—especially
+              through life stages that most programs ignore.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm font-medium">
-              <span className="px-4 py-2 bg-background/80 rounded-full border border-border">No shame</span>
-              <span className="px-4 py-2 bg-background/80 rounded-full border border-border">No punishment</span>
-              <span className="px-4 py-2 bg-background/80 rounded-full border border-border">No burnout</span>
+              <span className="px-4 py-2 bg-background/80 rounded-full border border-border">
+                No shame
+              </span>
+              <span className="px-4 py-2 bg-background/80 rounded-full border border-border">
+                No punishment
+              </span>
+              <span className="px-4 py-2 bg-background/80 rounded-full border border-border">
+                No burnout
+              </span>
             </div>
             <p className="text-foreground font-medium mt-6">
               Just smart, supportive training that lasts.
@@ -141,18 +167,25 @@ export const RealLifeFitnessSection = () => {
             <Clock className="w-7 h-7 text-vitality" />
           </div>
           <h3 className="font-display text-2xl md:text-3xl font-bold mb-6">
-            Designed for <span className="text-vitality">Busy, Real Humans</span>
+            Designed for{" "}
+            <span className="text-vitality">Busy, Real Humans</span>
           </h3>
           <div className="flex flex-wrap justify-center gap-4 mb-6">
             {designedForFeatures.map((feature) => (
-              <div key={feature} className="flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border">
+              <div
+                key={feature}
+                className="flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border"
+              >
                 <Check className="w-4 h-4 text-vitality" />
                 <span className="text-foreground font-medium">{feature}</span>
               </div>
             ))}
           </div>
           <p className="text-lg text-muted-foreground">
-            Fitness you don't quit—<span className="text-foreground font-semibold">because it finally fits.</span>
+            Fitness you don't quit—
+            <span className="text-foreground font-semibold">
+              because it finally fits.
+            </span>
           </p>
         </div>
 
@@ -168,7 +201,8 @@ export const RealLifeFitnessSection = () => {
                   Find Your Perfect Training Approach
                 </h3>
                 <p className="text-muted-foreground text-sm md:text-base">
-                  Take our 2-minute lifestyle quiz to get personalized recommendations
+                  Take our 2-minute lifestyle quiz to get personalized
+                  recommendations
                 </p>
               </div>
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 ml-4">
@@ -179,7 +213,7 @@ export const RealLifeFitnessSection = () => {
                 )}
               </div>
             </button>
-            
+
             {showQuiz && (
               <div className="p-6 md:p-8 pt-0 border-t border-border/50 animate-fade-in">
                 <LifestyleQuiz />
@@ -189,9 +223,13 @@ export const RealLifeFitnessSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="max-w-xl mx-auto text-center bg-card/80 backdrop-blur-sm rounded-3xl p-8 border border-border/50">
-          <a href = "https://calendly.com/sculptandstrive/30min" target = "_blank">
-            <Button variant="hero" size="xl" className="mb-4 group">
+        <div className="max-w-xl mx-auto text-center bg-card/80 backdrop-blur-sm rounded-3xl p-8 border border-border/50 flex flex-col">
+          <a href="https://calendly.com/sculptandstrive/30min" target="_blank">
+            <Button
+              variant="hero"
+              size="default"
+              className="md:h-16 md:px-12 md:text-lg md:rounded-2xl mb-2"
+            >
               Try Sculpt & Strive Risk-Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
