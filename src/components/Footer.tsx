@@ -39,10 +39,26 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Instagram, href: "https://www.instagram.com/sculpt.and.strive/", label: "Instagram" },
-  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61576293194411", label: "Facebook" },
-  { icon: Youtube, href: "https://www.youtube.com/@SculptAndStrive", label: "YouTube" },
-  { icon: FaWhatsapp, href: "https://api.whatsapp.com/message/WGFG665AKDQ4B1?autoload=1&app_absent=0&utm_source=ig", label: "Twitter" },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/sculpt.and.strive/",
+    label: "Instagram",
+  },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/profile.php?id=61576293194411",
+    label: "Facebook",
+  },
+  {
+    icon: Youtube,
+    href: "https://www.youtube.com/@SculptAndStrive",
+    label: "YouTube",
+  },
+  {
+    icon: FaWhatsapp,
+    href: "https://wa.me/message/WGFG665AKDQ4B1",
+    label: "WhatsApp",
+  },
 ];
 
 export const Footer = () => {
