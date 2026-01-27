@@ -134,7 +134,7 @@ export const PlansSection = () => {
                 <div className="grid md:grid-cols-3 gap-4 py-8">
                     {
                         plans.map((plan, index) => (
-                            <div className="flex flex-col gap-4 border rounded-xl py-6 px-4 transition-all duration-100 hover:shadow-glow justify-between animate-slide-up">
+                            <div className="flex flex-col gap-4 border rounded-xl py-6 px-4 transition-all duration-200 hover:shadow-glow justify-between animate-slide-up ">
                                 {plan.tag ? <div className=" text-center text-sm text-yellow-600 font-semibold flex gap-1 items-center justify-center"><Star size={14}/><p> Popular</p>
                                 </div> : <></>}
                                 <h2 className="text-xl font-semibold text-center ">{plan.name}</h2>

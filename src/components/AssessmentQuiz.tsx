@@ -312,7 +312,7 @@ export const AssessmentQuiz = () => {
               
               {/* Results Grid */}
               <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <Card variant="sage">
+                <Card variant="interactive">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-charcoal-700">
                       <Dumbbell className="w-5 h-5 text-sage-600" />

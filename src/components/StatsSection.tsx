@@ -6,7 +6,7 @@ const stats = [
     icon: Users,
     value: 20,
     suffix: "+",
-    label: "Active Members",
+    label: "Happy Members",
     description: "Transforming lives globally",
   },
   {
@@ -115,7 +115,7 @@ export const StatsSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-accent-foreground mb-4">
-            Trusted by Thousands Worldwide
+            Trusted by Worldwide
           </h2>
           <p className="text-accent-foreground/70 max-w-2xl mx-auto">
             Our numbers tell the story of real transformations, lasting results, and a community dedicated to better health.

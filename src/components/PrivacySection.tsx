@@ -103,12 +103,12 @@ const privacyPolicyData = [
 
 export const PrivacySection = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-muted/20">
+    <section className="py-24 relative overflow-hidden bg-muted/20 ">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
-      <div className="  px-28 relative z-10">
+      <div className="px-28 relative z-10">
 
       {privacyPolicyData.map((section, index) => (
-          <div key={index} className="mb-8 animate-pulse">
+          <div key={index} className="mb-8 ">
           <h2 className="text-xl font-bold mb-3">{section.title}</h2>
 
           {section.content?.map((text, i) => (

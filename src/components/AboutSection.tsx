@@ -1,4 +1,4 @@
-import { Award, ShieldCheck, Target, Users } from "lucide-react"
+import { Award, Lightbulb, ShieldCheck, Target, Users } from "lucide-react"
 import { MotiveCard } from "./MotiveCard"
 import { Card } from "./ui/card"
 
@@ -9,8 +9,10 @@ const aboutUsStats = [
 ]
 
 const motto = [
-    {heading: "OUR MISSION", description: "Sculpt & Strive Fitness is dedicated to creating a space where every member feels supported, challenged, and motivated to reach their personal best."},
-    {heading: "OUR VISION", description: "At Sculpt and Strive, we believe true fitness is both an art and a science deeply personal, purpose-driven, and guided by data. We bring together evidence-based training, intelligent nutrition, and mindful recovery to empower every individual to move smarter, grow stronger, and thrive sustainably."}
+    {heading: "OUR MISSION", description: "Sculpt & Strive Fitness is dedicated to creating a space where every member feels supported, challenged, and motivated to reach their personal best.", icon: Target},
+    {heading: "OUR VISION", description: "At Sculpt and Strive, we believe true fitness is both an art and a science deeply personal, purpose-driven, and guided by data. We bring together evidence-based training, intelligent nutrition, and mindful recovery to empower every individual to move smarter, grow stronger, and thrive sustainably.",
+    icon: Lightbulb
+    }
 ]
 
 const trainerInfo = [
@@ -45,7 +47,7 @@ export const AboutSection = () => {
               <Card
                 key={index}
                 variant="interactive"
-                className="p-6 overflow-hidden group animate-slide-up"
+                className="p-6 overflow-hidden group animate-slide-up flex flex-col gap-3"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <h2 className="text-xl font-bold text-center">

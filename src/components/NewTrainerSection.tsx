@@ -32,7 +32,7 @@ export const NewTrainerSection = () => {
                 {/* Trainer Cards */}
                 <div className="grid md:grid-cols-2 max-w-3xl gap-8 mx-auto py-8 ">
                     {trainerDetails.map((trainer, index) => (
-                        <div className="border text-center py-4 rounded-3xl hover:shadow-glow shadow-md animate-slide-up">
+                        <div className="border text-center py-4 rounded-3xl hover:shadow-glow shadow-md animate-slide-up transition-all duration-100">
                             <div className="flex flex-col gap-4 items-center">
                                 <img src = {trainer.profile} className="rounded-full 
                                 w-48 h-48"/>

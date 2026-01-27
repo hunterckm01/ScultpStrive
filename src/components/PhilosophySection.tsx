@@ -108,7 +108,7 @@ const StatCounter = ({ stat }: { stat: typeof trustStats[0] }) => {
 
 export const PhilosophySection = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+    <section className="pb-24 pt-12 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />

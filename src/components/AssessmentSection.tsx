@@ -28,10 +28,13 @@ const assessments = [
 
 export const AssessmentSection = () => {
   return (
-    <section id="assessments" className="py-24 bg-muted/30 relative overflow-hidden">
+    <section
+      id="assessments"
+      className="py-24 bg-muted/30 relative overflow-hidden"
+    >
       {/* Decorative elements */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute left-0 bottom-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute left-0 bottom-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -45,14 +48,15 @@ export const AssessmentSection = () => {
               <span className="text-gradient-hero">Feel Better.</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Our comprehensive assessment protocol identifies movement dysfunctions before they become injuries. 
-              Through detailed analysis, we create your personalized corrective roadmap.
+              Our comprehensive assessment protocol identifies movement
+              dysfunctions before they become injuries. Through detailed
+              analysis, we create your personalized corrective roadmap.
             </p>
 
             {/* Assessment cards */}
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {assessments.map((assessment, index) => (
-                <Card 
+                <Card
                   key={assessment.title}
                   variant="glass"
                   className="p-4 animate-slide-up"
@@ -63,20 +67,40 @@ export const AssessmentSection = () => {
                       <assessment.icon className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">{assessment.title}</h3>
-                      <p className="text-sm text-muted-foreground">{assessment.description}</p>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        {assessment.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {assessment.description}
+                      </p>
                     </div>
                   </div>
                 </Card>
               ))}
             </div>
 
-            <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
+            <Button
+              asChild
+              variant="hero"
+              size="lg"
+              className="cursor-pointer pointer-events-auto"
+            >
+              <a
+                href="https://calendly.com/sculptandstrive/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Your Assessment
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </Button>
+
+            {/* <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
               <Button className = "cursor-pointer" variant="hero" size="lg">
                 Book Your Assessment
                 <ArrowRight className="w-5 h-5" />
               </Button>
-            </a>
+            </a> */}
           </div>
 
           {/* Right Visual */}
@@ -88,12 +112,55 @@ export const AssessmentSection = () => {
                 className="w-48 h-72 text-foreground/20"
               >
                 {/* Simplified body outline */}
-                <ellipse cx="100" cy="30" rx="25" ry="30" fill="none" stroke="currentColor" strokeWidth="2" />
-                <line x1="100" y1="60" x2="100" y2="150" stroke="currentColor" strokeWidth="2" />
-                <line x1="100" y1="80" x2="50" y2="130" stroke="currentColor" strokeWidth="2" />
-                <line x1="100" y1="80" x2="150" y2="130" stroke="currentColor" strokeWidth="2" />
-                <line x1="100" y1="150" x2="70" y2="280" stroke="currentColor" strokeWidth="2" />
-                <line x1="100" y1="150" x2="130" y2="280" stroke="currentColor" strokeWidth="2" />
+                <ellipse
+                  cx="100"
+                  cy="30"
+                  rx="25"
+                  ry="30"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="100"
+                  y1="60"
+                  x2="100"
+                  y2="150"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="100"
+                  y1="80"
+                  x2="50"
+                  y2="130"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="100"
+                  y1="80"
+                  x2="150"
+                  y2="130"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="100"
+                  y1="150"
+                  x2="70"
+                  y2="280"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="100"
+                  y1="150"
+                  x2="130"
+                  y2="280"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
               </svg>
 
               {/* Assessment points */}
@@ -107,7 +174,11 @@ export const AssessmentSection = () => {
                 <div
                   key={i}
                   className="absolute flex items-center gap-2"
-                  style={{ left: point.x, top: point.y, transform: "translate(-50%, -50%)" }}
+                  style={{
+                    left: point.x,
+                    top: point.y,
+                    transform: "translate(-50%, -50%)",
+                  }}
                 >
                   <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
                   <span className="text-xs text-muted-foreground whitespace-nowrap bg-card/80 backdrop-blur-sm px-2 py-1 rounded-lg hidden sm:block">
@@ -119,11 +190,51 @@ export const AssessmentSection = () => {
               {/* Connecting lines decoration */}
               <div className="absolute inset-0 opacity-20">
                 <svg className="w-full h-full">
-                  <line x1="10%" y1="10%" x2="90%" y2="10%" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="5,5" />
-                  <line x1="10%" y1="30%" x2="90%" y2="30%" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="5,5" />
-                  <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="5,5" />
-                  <line x1="10%" y1="70%" x2="90%" y2="70%" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="5,5" />
-                  <line x1="10%" y1="90%" x2="90%" y2="90%" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="5,5" />
+                  <line
+                    x1="10%"
+                    y1="10%"
+                    x2="90%"
+                    y2="10%"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="0.5"
+                    strokeDasharray="5,5"
+                  />
+                  <line
+                    x1="10%"
+                    y1="30%"
+                    x2="90%"
+                    y2="30%"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="0.5"
+                    strokeDasharray="5,5"
+                  />
+                  <line
+                    x1="10%"
+                    y1="50%"
+                    x2="90%"
+                    y2="50%"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="0.5"
+                    strokeDasharray="5,5"
+                  />
+                  <line
+                    x1="10%"
+                    y1="70%"
+                    x2="90%"
+                    y2="70%"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="0.5"
+                    strokeDasharray="5,5"
+                  />
+                  <line
+                    x1="10%"
+                    y1="90%"
+                    x2="90%"
+                    y2="90%"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="0.5"
+                    strokeDasharray="5,5"
+                  />
                 </svg>
               </div>
             </div>
@@ -136,7 +247,9 @@ export const AssessmentSection = () => {
                 </div>
                 <div>
                   <div className="font-display font-bold text-xl">360°</div>
-                  <div className="text-sm text-muted-foreground">Full Analysis</div>
+                  <div className="text-sm text-muted-foreground">
+                    Full Analysis
+                  </div>
                 </div>
               </div>
             </div>

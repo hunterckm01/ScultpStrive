@@ -29,7 +29,6 @@ const steps = [
     title: "Get Your Custom Plan",
     description: "Based on your assessment results, life stage, and goals, we create a personalized training and nutrition program just for you.",
     details: [
-      "AI-powered program design",
       "Macro-calculated meal plans",
       "Equipment preferences",
       "Schedule optimization"
@@ -68,13 +67,8 @@ export const HowItWorksSection = () => {
   return (
     <section className="py-24 relative overflow-hidden bg-muted/20">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30">
-        {/* <div className="absolute top-20 left-10 w-2 h-2 bg-primary rounded-full" /> */}
-        {/* <div className="absolute top-40 right-20 w-3 h-3 bg-secondary rounded-full" /> */}
-        {/* <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-accent rounded-full" /> */}
-      </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 z-100">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
@@ -85,8 +79,9 @@ export const HowItWorksSection = () => {
             <span className="text-gradient-hero">Lasting Change</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Our proven 4-step process has helped thousands achieve their fitness goals. 
-            From assessment to achievement, we guide you every step of the way.
+            Our proven 4-step process has helped thousands achieve their fitness
+            goals. From assessment to achievement, we guide you every step of
+            the way.
           </p>
         </div>
 
@@ -97,8 +92,8 @@ export const HowItWorksSection = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <div 
-                key={step.number} 
+              <div
+                key={step.number}
                 className="relative animate-slide-up"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
@@ -109,25 +104,40 @@ export const HowItWorksSection = () => {
                   </div>
                 )}
 
-                <Card variant="elevated" className="p-6 h-full relative group hover:shadow-glow transition-all duration-300">
+                <Card
+                  variant="elevated"
+                  className="p-6 h-full relative group hover:shadow-glow transition-all duration-300"
+                >
                   {/* Step number */}
                   <div className="absolute -top-3 -right-3 w-10 h-10 gradient-hero rounded-full flex items-center justify-center text-primary-foreground font-display font-bold text-sm shadow-soft">
                     {step.number}
                   </div>
 
                   {/* Icon */}
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${
-                    step.color === 'primary' ? 'gradient-hero' : 
-                    step.color === 'secondary' ? 'gradient-dark' : 'gradient-dark'
-                  }`}>
-                    <step.icon className={`w-7 h-7 ${
-                      step.color === 'accent' ? 'text-accent-foreground' : 
-                      step.color === 'secondary' ? 'text-secondary-foreground' : 'text-primary-foreground'
-                    }`} />
+                  <div
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${
+                      step.color === "primary"
+                        ? "gradient-hero"
+                        : step.color === "secondary"
+                          ? "gradient-dark"
+                          : "gradient-dark"
+                    }`}
+                  >
+                    <step.icon
+                      className={`w-7 h-7 ${
+                        step.color === "accent"
+                          ? "text-accent-foreground"
+                          : step.color === "secondary"
+                            ? "text-secondary-foreground"
+                            : "text-primary-foreground"
+                      }`}
+                    />
                   </div>
 
                   {/* Content */}
-                  <h3 className="font-display text-xl font-bold mb-3">{step.title}</h3>
+                  <h3 className="font-display text-xl font-bold mb-3">
+                    {step.title}
+                  </h3>
                   <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
                     {step.description}
                   </p>
@@ -135,7 +145,10 @@ export const HowItWorksSection = () => {
                   {/* Details list */}
                   <ul className="space-y-2">
                     {step.details.map((detail) => (
-                      <li key={detail} className="flex items-center gap-2 text-sm">
+                      <li
+                        key={detail}
+                        className="flex items-center gap-2 text-sm"
+                      >
                         <Check className="w-4 h-4 text-primary shrink-0" />
                         <span className="text-muted-foreground">{detail}</span>
                       </li>
@@ -148,17 +161,23 @@ export const HowItWorksSection = () => {
         </div>
 
         {/* CTA */}
-        {/* <div className="text-center mt-16">
-            <Button  className="group hover:scale-105 cursor-pointer" >
+        <div className="text-center mt-16">
+          <Button
+            asChild
+            variant="hero"
+            size="lg"
+            className="cursor-pointer pointer-events-auto"
+          >
+            <a href="https://calendly.com/sculptandstrive/30min">
               Start Your Journey Today
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-       
+            </a>
+          </Button>
 
           <p className="text-sm text-muted-foreground mt-4">
             Free assessment • No commitment required
           </p>
-        </div> */}
+        </div>
       </div>
     </section>
   );

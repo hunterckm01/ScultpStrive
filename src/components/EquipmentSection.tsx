@@ -174,9 +174,11 @@ export const EquipmentSection = () => {
                       +{equipment.workouts - 3} more
                     </span>
                   </div>
-                  <Button variant="ghost" size="sm" className="shrink-0">
+                  <Button variant="ghost" size="sm" className="shrink-0" asChild>
+                    <a href = "https://calendly.com/sculptandstrive/30min" target = "_blank">
                     Explore
                     <ArrowRight className="w-4 h-4 ml-1" />
+                    </a>
                   </Button>
                 </div>
               </div>

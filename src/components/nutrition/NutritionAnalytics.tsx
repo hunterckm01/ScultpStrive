@@ -37,7 +37,7 @@ interface DietPlan {
   fats_goal_pct: number;
 }
 
-export const NutritionAnalytics = () => {
+export const NutritionAnalytics = ({setDietPlanModalOpen}) => {
   const { user } = useAuth();
   const [weeklyStats, setWeeklyStats] = useState<DailyStats[]>([]);
   const [todayStats, setTodayStats] = useState<DailyStats | null>(null);
@@ -327,7 +327,7 @@ export const NutritionAnalytics = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Create a personalized diet plan to track your nutrition adherence effectively.
             </p>
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm" onClick = {()=>setDietPlanModalOpen(true)}>
               Create Diet Plan
             </Button>
           </div>
