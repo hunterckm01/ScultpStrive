@@ -4,6 +4,7 @@ import { useState } from "react";
 import logo from "@/assets/sculpt-and-strive-logo.jpg";
 import { NavLink } from "react-router-dom";
 import { AuthModal } from "./auth/AuthModal";
+import { useAuth } from "@/contexts/AuthContext";
 
 const navLinks = [
   { label: "Programs", path: "/programs" },
@@ -18,6 +19,7 @@ const navLinks = [
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const {user, signOut} = useAuth();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/30">
@@ -50,21 +52,36 @@ export const Header = () => {
           {/* <p className="font-display font-bold text-xl text-foreground block sm:hidden">Sculpt and Strive</p> */}
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setAuthModalOpen(true)}
-            >
-              Login
-            </Button>
-            
+          {!user ? (
+            <div className="hidden md:flex items-center gap-4">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setAuthModalOpen(true)}
+              >
+                Login
+              </Button>
+
               <Button variant="hero" size="default" asChild>
-                <a href="https://calendly.com/sculptandstrive/30min" target="_blank">
+                <a
+                  href="https://calendly.com/sculptandstrive/30min"
+                  target="_blank"
+                >
                   Start Your Journey
                 </a>
               </Button>
-          </div>
+            </div>
+          ) : (
+            <div className="hidden md:flex items-center gap-4">
+              <Button
+                variant="hero"
+                size="default"
+                onClick={() => signOut()}
+                >
+                Log Out
+              </Button>
+            </div>
+          )}
 
           {/* Mobile Menu Toggle */}
           <button
@@ -94,22 +111,22 @@ export const Header = () => {
             </nav>
             <div className="flex flex-col gap-3 items-center">
               <Button
-              variant="glass"
+                variant="glass"
                 // variant="ghost"
                 className=""
                 onClick={() => setAuthModalOpen(true)}
               >
                 Login
               </Button>
-              
-                <Button variant="hero" size="default" asChild>
-                    <a
+
+              <Button variant="hero" size="default" asChild>
+                <a
                   href="https://calendly.com/sculptandstrive/30min"
                   target="_blank"
                 >
                   Start Your Journey
                 </a>
-                </Button>
+              </Button>
             </div>
           </div>
         </div>
