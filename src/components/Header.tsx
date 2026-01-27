@@ -73,11 +73,7 @@ export const Header = () => {
             </div>
           ) : (
             <div className="hidden md:flex items-center gap-4">
-              <Button
-                variant="hero"
-                size="default"
-                onClick={() => signOut()}
-                >
+              <Button variant="hero" size="default" onClick={() => signOut()}>
                 Log Out
               </Button>
             </div>
@@ -109,25 +105,32 @@ export const Header = () => {
                 </NavLink>
               ))}
             </nav>
-            <div className="flex flex-col gap-3 items-center">
-              <Button
-                variant="glass"
-                // variant="ghost"
-                className=""
-                onClick={() => setAuthModalOpen(true)}
-              >
-                Login
-              </Button>
-
-              <Button variant="hero" size="default" asChild>
-                <a
-                  href="https://calendly.com/sculptandstrive/30min"
-                  target="_blank"
+            {!user ? (
+              <div className="flex flex-col gap-3 items-center">
+                <Button
+                  variant="glass"
+                  size="sm"
+                  onClick={() => setAuthModalOpen(true)}
                 >
-                  Start Your Journey
-                </a>
-              </Button>
-            </div>
+                  Login
+                </Button>
+
+                <Button variant="hero" size="default" asChild>
+                  <a
+                    href="https://calendly.com/sculptandstrive/30min"
+                    target="_blank"
+                  >
+                    Start Your Journey
+                  </a>
+                </Button>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-3 items-center">
+                <Button variant="hero" size="default" onClick={() => signOut()}>
+                  Log Out
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       )}
