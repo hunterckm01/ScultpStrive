@@ -29,9 +29,7 @@ const footerLinks = {
     "Corporate Wellness",
   ],
   Resources: [
-    "Blog",
     "Exercise Library",
-    "Nutrition Guides",
     "Success Stories",
     "FAQ",
     "Support",

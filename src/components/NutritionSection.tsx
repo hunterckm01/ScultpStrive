@@ -35,7 +35,8 @@ import { MealLoggingForm } from "@/components/nutrition/MealLoggingForm";
 import { CustomFoodForm } from "@/components/nutrition/CustomFoodForm";
 import { NutritionAnalytics } from "@/components/nutrition/NutritionAnalytics";
 import { DietPlanForm } from "@/components/nutrition/DietPlanForm";
-const FOOD_API_KEY = import.meta.env.VITE_FOODBASE_API_KEY
+import {USAFoods, IndianFoods } from '@/data'
+// const FOOD_API_KEY = import.meta.env.VITE_FOODBASE_API_KEY
 
 // Types for food database
 interface Food {
@@ -84,6 +85,22 @@ const weeklyAdherence = [
   { day: "Sun", adherence: 90 },
 ];
 
+const mapRawFoodToFood = (item: any, region: "USA" | "India"): Food => {
+  return {
+    id: item.food_id,
+    name: item.food_name,
+    region,
+    category: item.category,
+    serving_size: "100g",
+    calories: item.nutrition_per_100g.calories,
+    protein: item.nutrition_per_100g.protein,
+    carbs: item.nutrition_per_100g.carbs,
+    fats: item.nutrition_per_100g.fat,
+    fiber: item.nutrition_per_100g.fiber ?? null,
+  };
+};
+
+
 export const NutritionSection = () => {
   const { user, signOut } = useAuth();
   const [selectedRegion, setSelectedRegion] = useState<"USA" | "India">("USA");
@@ -104,85 +121,69 @@ export const NutritionSection = () => {
   // Demo adherence percentage
   const overallAdherence = 86;
 
-  // useEffect(() => {
-  //   if (!searchQuery.trim() || selectedRegion === "India") {
-  //     setFoods([]);
-  //     return;
-  //   }
-
-  //   const timeout = setTimeout(async () => {
-  //     setLoading(true);
-  //     try {
-  //       //SEARCH
-  //       const searchRes = await fetch(
-  //         `https://api.nal.usda.gov/fdc/v1/foods/search?query=${searchQuery}&pageSize=1&api_key=${FOOD_API_KEY}`,
-  //       );
-  //       const searchData = await searchRes.json();
-
-  //       //DETAILS FOR EACH RESULT
-  //       const detailedFoods: Food[] = await Promise.all(
-  //         (searchData.foods || []).map(async (item: any) => {
-  //           const detailRes = await fetch(
-  //             `https://api.nal.usda.gov/fdc/v1/food/${item.fdcId}?api_key=${FOOD_API_KEY}`,
-  //           );
-  //           const detail = await detailRes.json();
-
-  //           return {
-  //             id: item.fdcId,
-  //             name: detail.description,
-  //             calories: getNutrient(detail.foodNutrients, "Energy"),
-  //             protein: getNutrient(detail.foodNutrients, "Protein"),
-  //             fats: getNutrient(detail.foodNutrients, "Total lipid (fat)"),
-  //             carbs: getNutrient(
-  //               detail.foodNutrients,
-  //               "Carbohydrate, by difference",
-  //             ),
-  //             serving_size: detail.servingSize
-  //               ? `${detail.servingSize} ${detail.servingSizeUnit}`
-  //               : "100 g",
-  //             category: detail.dataType,
-  //           };
-  //         }),
-  //       );
-
-  //       setFoods(detailedFoods);
-  //     } catch (err) {
-  //       console.error("USDA error:", err);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   }, 500);
-
-  //   return () => clearTimeout(timeout);
-  // }, [searchQuery, selectedRegion]);
-
   useEffect(() => {
     fetchFoods();
   }, [selectedRegion, searchQuery]);
 
-  const fetchFoods = async () => {
-    setLoading(true);
-    try {
-      let query = supabase
-        .from("foods")
-        .select("*")
-        .eq("region", selectedRegion)
-        .order("category", { ascending: true });
+ const fetchFoods = async () => {
+   setLoading(true);
 
-      if (searchQuery) {
-        query = query.ilike("name", `%${searchQuery}%`);
-      }
+   try {
+     let rawData = selectedRegion === "USA" ? USAFoods : IndianFoods;
 
-      const { data, error } = await query.limit(20);
+     if (searchQuery) {
+       const q = searchQuery.toLowerCase();
+       rawData = rawData.filter((food) =>
+         food.food_name.toLowerCase().includes(q),
+       );
+     }
+
+     rawData = [...rawData].sort((a, b) =>
+       a.category.localeCompare(b.category),
+     );
+
+     rawData = rawData.slice(0, 20);
+
+     const mappedFoods: Food[] = rawData.map((item) =>
+       mapRawFoodToFood(item, selectedRegion),
+     );
+
+     // Fake network delay
+     await new Promise((r) => setTimeout(r, 400));
+
+     setFoods(mappedFoods);
+   } catch (error) {
+     console.error("Error fetching foods:", error);
+   } finally {
+     setLoading(false);
+   }
+ };
+
+
+
+  // const fetchFoods = async () => {
+  //   setLoading(true);
+  //   try {
+  //     let query = supabase
+  //       .from("foods")
+  //       .select("*")
+  //       .eq("region", selectedRegion)
+  //       .order("category", { ascending: true });
+
+  //     if (searchQuery) {
+  //       query = query.ilike("name", `%${searchQuery}%`);
+  //     }
+
+  //     const { data, error } = await query.limit(20);
       
-      if (error) throw error;
-      setFoods(data || []);
-    } catch (error) {
-      console.error("Error fetching foods:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     if (error) throw error;
+  //     setFoods(data || []);
+  //   } catch (error) {
+  //     console.error("Error fetching foods:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const getAdherenceColor = (value: number) => {
     if (value >= 90) return "text-secondary";
@@ -379,11 +380,11 @@ export const NutritionSection = () => {
                         <div className="flex items-center gap-4 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <Flame className="w-3 h-3" />
-                            {food.calories} cal
+                            {food.calories ?? "NA"} cal
                           </span>
-                          <span>P: {food.protein}g</span>
-                          <span>C: {food.carbs}g</span>
-                          <span>F: {food.fats}g</span>
+                          <span>P: {food.protein ?? "NA"}g</span>
+                          <span>C: {food.carbs ?? "NA"}g</span>
+                          <span>F: {food.fats ?? "NA"}g</span>
                         </div>
                         <div className="text-xs text-muted-foreground mt-1">
                           Serving: {food.serving_size}

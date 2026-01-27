@@ -1,0 +1,788 @@
+[
+  {
+    "food_id": "IN001",
+    "food_name": "Rice (White, cooked)",
+    "category": "Cereals & Grains",
+    "nutrition_per_100g": {
+      "calories": 130,
+      "carbs": 28,
+      "protein": 2.7,
+      "fat": 0.3,
+      "fiber": 0.4
+    }
+  },
+  {
+    "food_id": "IN002",
+    "food_name": "Rice (Brown, cooked)",
+    "category": "Cereals & Grains",
+    "nutrition_per_100g": {
+      "calories": 123,
+      "carbs": 26,
+      "protein": 2.7,
+      "fat": 1.0,
+      "fiber": 1.8
+    }
+  },
+  {
+    "food_id": "IN003",
+    "food_name": "Wheat (Whole)",
+    "category": "Cereals & Grains",
+    "nutrition_per_100g": {
+      "calories": 340,
+      "carbs": 72,
+      "protein": 13,
+      "fat": 2.5,
+      "fiber": 10
+    }
+  },
+  {
+    "food_id": "IN004",
+    "food_name": "Roti (Chapati)",
+    "category": "Cereals & Grains",
+    "nutrition_per_100g": {
+      "calories": 297,
+      "carbs": 55,
+      "protein": 11,
+      "fat": 4,
+      "fiber": 9
+    }
+  },
+  {
+    "food_id": "IN005",
+    "food_name": "Oats",
+    "category": "Cereals & Grains",
+    "nutrition_per_100g": {
+      "calories": 389,
+      "carbs": 66,
+      "protein": 17,
+      "fat": 7,
+      "fiber": 11
+    }
+  },
+
+  {
+    "food_id": "IN006",
+    "food_name": "Toor Dal",
+    "category": "Pulses & Legumes",
+    "nutrition_per_100g": {
+      "calories": 343,
+      "carbs": 62,
+      "protein": 22,
+      "fat": 1.7,
+      "fiber": 15
+    }
+  },
+  {
+    "food_id": "IN007",
+    "food_name": "Moong Dal",
+    "category": "Pulses & Legumes",
+    "nutrition_per_100g": {
+      "calories": 347,
+      "carbs": 63,
+      "protein": 24,
+      "fat": 1.2,
+      "fiber": 16
+    }
+  },
+  {
+    "food_id": "IN008",
+    "food_name": "Masoor Dal",
+    "category": "Pulses & Legumes",
+    "nutrition_per_100g": {
+      "calories": 353,
+      "carbs": 60,
+      "protein": 25,
+      "fat": 1.1,
+      "fiber": 11
+    }
+  },
+  {
+    "food_id": "IN009",
+    "food_name": "Chana Dal",
+    "category": "Pulses & Legumes",
+    "nutrition_per_100g": {
+      "calories": 364,
+      "carbs": 61,
+      "protein": 21,
+      "fat": 5,
+      "fiber": 12
+    }
+  },
+  {
+    "food_id": "IN010",
+    "food_name": "Rajma (Kidney Beans)",
+    "category": "Pulses & Legumes",
+    "nutrition_per_100g": {
+      "calories": 333,
+      "carbs": 60,
+      "protein": 24,
+      "fat": 0.8,
+      "fiber": 15
+    }
+  },
+
+  {
+    "food_id": "IN011",
+    "food_name": "Potato",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 77,
+      "carbs": 17,
+      "protein": 2,
+      "fat": 0.1,
+      "fiber": 2.2
+    }
+  },
+  {
+    "food_id": "IN012",
+    "food_name": "Onion",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 40,
+      "carbs": 9,
+      "protein": 1.1,
+      "fat": 0.1,
+      "fiber": 1.7
+    }
+  },
+  {
+    "food_id": "IN013",
+    "food_name": "Tomato",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 18,
+      "carbs": 3.9,
+      "protein": 0.9,
+      "fat": 0.2,
+      "fiber": 1.2
+    }
+  },
+  {
+    "food_id": "IN014",
+    "food_name": "Spinach",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 23,
+      "carbs": 3.6,
+      "protein": 2.9,
+      "fat": 0.4,
+      "fiber": 2.2
+    }
+  },
+  {
+    "food_id": "IN015",
+    "food_name": "Cauliflower",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 25,
+      "carbs": 5,
+      "protein": 1.9,
+      "fat": 0.3,
+      "fiber": 2
+    }
+  },
+
+  {
+    "food_id": "IN016",
+    "food_name": "Apple",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 52,
+      "carbs": 14,
+      "protein": 0.3,
+      "fat": 0.2,
+      "fiber": 2.4
+    }
+  },
+  {
+    "food_id": "IN017",
+    "food_name": "Banana",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 89,
+      "carbs": 23,
+      "protein": 1.1,
+      "fat": 0.3,
+      "fiber": 2.6
+    }
+  },
+  {
+    "food_id": "IN018",
+    "food_name": "Mango",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 60,
+      "carbs": 15,
+      "protein": 0.8,
+      "fat": 0.4,
+      "fiber": 1.6
+    }
+  },
+  {
+    "food_id": "IN019",
+    "food_name": "Orange",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 47,
+      "carbs": 12,
+      "protein": 0.9,
+      "fat": 0.1,
+      "fiber": 2.4
+    }
+  },
+  {
+    "food_id": "IN020",
+    "food_name": "Papaya",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 43,
+      "carbs": 11,
+      "protein": 0.5,
+      "fat": 0.3,
+      "fiber": 1.7
+    }
+  },
+
+  {
+    "food_id": "IN021",
+    "food_name": "Milk (Full Cream)",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 60,
+      "carbs": 5,
+      "protein": 3.2,
+      "fat": 3.3,
+      "calcium_mg": 113
+    }
+  },
+  {
+    "food_id": "IN022",
+    "food_name": "Curd (Yogurt)",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 98,
+      "carbs": 4,
+      "protein": 11,
+      "fat": 4.3,
+      "calcium_mg": 121
+    }
+  },
+  {
+    "food_id": "IN023",
+    "food_name": "Paneer",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 265,
+      "carbs": 1.2,
+      "protein": 18,
+      "fat": 20,
+      "calcium_mg": 208
+    }
+  },
+  {
+    "food_id": "IN024",
+    "food_name": "Butter",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 717,
+      "carbs": 0.1,
+      "protein": 0.9,
+      "fat": 81,
+      "calcium_mg": 24
+    }
+  },
+
+  {
+    "food_id": "IN025",
+    "food_name": "Almonds",
+    "category": "Nuts & Seeds",
+    "nutrition_per_100g": {
+      "calories": 579,
+      "carbs": 22,
+      "protein": 21,
+      "fat": 50,
+      "fiber": 12
+    }
+  },
+  {
+    "food_id": "IN026",
+    "food_name": "Peanuts",
+    "category": "Nuts & Seeds",
+    "nutrition_per_100g": {
+      "calories": 567,
+      "carbs": 16,
+      "protein": 26,
+      "fat": 49,
+      "fiber": 9
+    }
+  },
+  {
+    "food_id": "IN027",
+    "food_name": "Cashew",
+    "category": "Nuts & Seeds",
+    "nutrition_per_100g": {
+      "calories": 553,
+      "carbs": 30,
+      "protein": 18,
+      "fat": 44,
+      "fiber": 3
+    }
+  },
+  {
+    "food_id": "IN028",
+    "food_name": "Flax Seeds",
+    "category": "Nuts & Seeds",
+    "nutrition_per_100g": {
+      "calories": 534,
+      "carbs": 29,
+      "protein": 18,
+      "fat": 42,
+      "fiber": 27
+    }
+  },
+
+  {
+    "food_id": "IN029",
+    "food_name": "Dal Tadka",
+    "category": "Common Indian Dishes",
+    "nutrition_per_100g": {
+      "calories": 180,
+      "carbs": 20,
+      "protein": 9,
+      "fat": 7
+    }
+  },
+  {
+    "food_id": "IN030",
+    "food_name": "Veg Biryani",
+    "category": "Common Indian Dishes",
+    "nutrition_per_100g": {
+      "calories": 198,
+      "carbs": 30,
+      "protein": 4,
+      "fat": 6
+    }
+  },
+  {
+    "food_id": "IN031",
+    "food_name": "Idli",
+    "category": "Common Indian Dishes",
+    "nutrition_per_100g": {
+      "calories": 39,
+      "carbs": 8,
+      "protein": 2,
+      "fat": 0.4
+    }
+  },
+  {
+    "food_id": "IN032",
+    "food_name": "Dosa",
+    "category": "Common Indian Dishes",
+    "nutrition_per_100g": {
+      "calories": 133,
+      "carbs": 18,
+      "protein": 4,
+      "fat": 3.7
+    }
+  },
+  {
+    "food_id": "IN033",
+    "food_name": "Sambar",
+    "category": "Common Indian Dishes",
+    "nutrition_per_100g": {
+      "calories": 150,
+      "carbs": 19,
+      "protein": 7,
+      "fat": 5
+    }
+  },
+  {
+    "food_id": "IN034",
+    "food_name": "Chickoo",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 94
+    }
+  },
+  {
+    "food_id": "IN035",
+    "food_name": "Guava",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 66
+    }
+  },
+  {
+    "food_id": "IN036",
+    "food_name": "Pomegranate",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 77
+    }
+  },
+  {
+    "food_id": "IN037",
+    "food_name": "Brinjal (Eggplant)",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 24
+    }
+  },
+  {
+    "food_id": "IN038",
+    "food_name": "Fenugreek (Methi)",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 49
+    }
+  },
+  {
+    "food_id": "IN039",
+    "food_name": "Okra (Ladyfinger)",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 50
+    }
+  },
+  {
+    "food_id": "IN040",
+    "food_name": "Bajra (Pearl Millet)",
+    "category": "Cereals & Grains",
+    "nutrition_per_100g": {
+      "calories": 360
+    }
+  },
+  {
+    "food_id": "IN041",
+    "food_name": "Maize flour",
+    "category": "Cereals & Grains",
+    "nutrition_per_100g": {
+      "calories": 355
+    }
+  },
+  {
+    "food_id": "IN042",
+    "food_name": "Ghee (Clarified Butter)",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 910
+    }
+  },
+  {
+    "food_id": "IN043",
+    "food_name": "Buttermilk",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 19
+    }
+  },
+  {
+    "food_id": "IN044",
+    "food_name": "Milk Buffalo",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 115
+    }
+  },
+  {
+    "food_id": "IN045",
+    "food_name": "Paratha",
+    "category": "Common Indian Dishes",
+    "nutrition_per_100g": {
+      "calories": 280
+    }
+  },
+  {
+    "food_id": "IN046",
+    "food_name": "Cream",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 210,
+      "carbs": 3,
+      "protein": 2,
+      "fat": 21
+    }
+  },
+  {
+    "food_id": "IN047",
+    "food_name": "Ice Cream",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 170,
+      "carbs": 25,
+      "protein": 4,
+      "fat": 7
+    }
+  },
+  {
+    "food_id": "IN048",
+    "food_name": "Margarine",
+    "category": "Dairy Products",
+    "nutrition_per_100g": {
+      "calories": 740,
+      "carbs": 0,
+      "protein": 0,
+      "fat": 81
+    }
+  },
+  {
+    "food_id": "IN049",
+    "food_name": "Eggs",
+    "category": "Animal Products",
+    "nutrition_per_100g": {
+      "calories": 150,
+      "carbs": 0,
+      "protein": 12,
+      "fat": 11
+    }
+  },
+  {
+    "food_id": "IN050",
+    "food_name": "Pork (Grilled)",
+    "category": "Animal Products",
+    "nutrition_per_100g": {
+      "calories": 340,
+      "carbs": 0,
+      "protein": 29,
+      "fat": 24
+    }
+  },
+  {
+    "food_id": "IN051",
+    "food_name": "Chicken (Roast)",
+    "category": "Animal Products",
+    "nutrition_per_100g": {
+      "calories": 150,
+      "carbs": 0,
+      "protein": 25,
+      "fat": 5
+    }
+  },
+  {
+    "food_id": "IN052",
+    "food_name": "Cabbage (Boiled)",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 10,
+      "carbs": 1,
+      "protein": 1,
+      "fat": 0
+    }
+  },
+  {
+    "food_id": "IN053",
+    "food_name": "Cucumber (Raw)",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 10,
+      "carbs": 2,
+      "protein": 0.6,
+      "fat": 0
+    }
+  },
+  {
+    "food_id": "IN054",
+    "food_name": "Peas (Boiled)",
+    "category": "Vegetables",
+    "nutrition_per_100g": {
+      "calories": 50,
+      "carbs": 8,
+      "protein": 5,
+      "fat": 0
+    }
+  },
+  {
+    "food_id": "IN055",
+    "food_name": "Cherries",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 50,
+      "carbs": 12,
+      "protein": 0.6,
+      "fat": 0
+    }
+  },
+  {
+    "food_id": "IN056",
+    "food_name": "Grapes",
+    "category": "Fruits",
+    "nutrition_per_100g": {
+      "calories": 60,
+      "carbs": 15,
+      "protein": 0.6,
+      "fat": 0
+    }
+  },
+  {
+    "food_id": "IN057",
+    "food_name": "Beer",
+    "category": "Beverages",
+    "nutrition_per_100g": {
+      "calories": 30,
+      "carbs": 2,
+      "protein": 0.3,
+      "fat": 0
+    }
+  },
+  {
+    "food_id": "IN058",
+    "food_name": "Wine",
+    "category": "Beverages",
+    "nutrition_per_100g": {
+      "calories": 70,
+      "carbs": 0,
+      "protein": 0,
+      "fat": 0
+    }
+  },
+  {
+    "food_id": "IN059",
+    "food_name": "Spirits",
+    "category": "Beverages",
+    "nutrition_per_100g": {
+      "calories": 220,
+      "carbs": 0,
+      "protein": 0,
+      "fat": 0
+    }
+  },
+  {
+    "food_id": "IN060",
+    "food_name": "Coffee (Black)",
+    "category": "Beverages",
+    "nutrition_per_100g": {
+      "calories": 0,
+      "carbs": 0,
+      "protein": 0,
+      "fat": 0
+    }
+  },
+  {
+    "food_id": "IN061",
+    "food_name": "Bread",
+    "category": "Cereals & Processed Foods",
+    "nutrition_per_100g": {
+      "calories": 230,
+      "carbs": 50,
+      "protein": 8,
+      "fat": 2
+    }
+  },
+  {
+    "food_id": "IN062",
+    "food_name": "Cornflakes with milk",
+    "category": "Cereals & Processed Foods",
+    "nutrition_per_100g": {
+      "calories": 205,
+      "carbs": 34.7,
+      "protein": 6.5,
+      "fat": 4
+    }
+  },
+  {
+    "food_id": "IN063",
+    "food_name": "Chocolate Biscuits",
+    "category": "Cereals & Processed Foods",
+    "nutrition_per_100g": {
+      "calories": 520,
+      "carbs": 67,
+      "protein": 6,
+      "fat": 28
+    }
+  },
+  {
+    "food_id": "IN064",
+    "food_name": "Wheat Bran",
+    "category": "Cereals & Processed Foods",
+    "nutrition_per_100g": {
+      "calories": 200,
+      "carbs": 23,
+      "protein": 14,
+      "fat": 6
+    }
+  },
+  {
+  "food_id": "IN065",
+  "food_name": "Bitter Gourd (Karela)",
+  "category": "Vegetables",
+  "nutrition_per_100g": {
+    "calories": 25,
+    "carbs": 4,
+    "protein": 1.5,
+    "fat": 0.2,
+    "fiber": 2.8
+  }
+  },
+  {
+    "food_id": "IN066",
+    "food_name": "Rohu (Rui)",
+    "category": "Seafood/Fish",
+    "nutrition_per_100g": {
+      "calories": 110,
+      "carbs": 0,
+      "protein": 19,
+      "fat": 3,
+      "notes": "High Protein, Calcium, Iron"
+    }
+  },
+  {
+    "food_id": "IN067",
+    "food_name": "Catla",
+    "category": "Seafood/Fish",
+    "nutrition_per_100g": {
+      "calories": 105,
+      "carbs": 0,
+      "protein": 18.5,
+      "fat": 1.5,
+      "notes": "Protein, Phosphorus"
+    }
+  },
+  {
+    "food_id": "IN068",
+    "food_name": "Mackerel (Bangda)",
+    "category": "Seafood/Fish",
+    "nutrition_per_100g": {
+      "calories": 165,
+      "carbs": 0,
+      "protein": 19,
+      "fat": 9,
+      "notes": "Omega-3 (EPA/DHA), Iodine"
+    }
+  },
+  {
+    "food_id": "IN069",
+    "food_name": "Hilsa (Ilish)",
+    "category": "Seafood/Fish",
+    "nutrition_per_100g": {
+      "calories": 190,
+      "carbs": 0,
+      "protein": 19,
+      "fat": 12.5,
+      "notes": "Omega-3 Fatty Acids"
+    }
+  },
+  {
+    "food_id": "IN070",
+    "food_name": "Pomfret (White)",
+    "category": "Seafood/Fish",
+    "nutrition_per_100g": {
+      "calories": 95,
+      "carbs": 0,
+      "protein": 16,
+      "fat": 2.5,
+      "notes": "Protein, Calcium, Iron"
+    }
+  },
+  {
+    "food_id": "IN071",
+    "food_name": "Indian Salmon (Rawas)",
+    "category": "Seafood/Fish",
+    "nutrition_per_100g": {
+      "calories": 150,
+      "carbs": 0,
+      "protein": 20,
+      "fat": 8,
+      "notes": "Rich in Omega-3"
+    }
+  }
+]
