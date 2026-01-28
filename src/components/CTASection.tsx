@@ -178,7 +178,7 @@ export const CTASection = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <a
-            href="https://calendly.com/sculptandstrive/30min?month=2025-09"
+            href="https://calendly.com/sculptandstrive/30min"
             target="_blank"
           >
             <Button
@@ -190,7 +190,7 @@ export const CTASection = () => {
             </Button>
           </a>
           <a
-            href="https://calendly.com/sculptandstrive/30min?month=2025-09"
+            href="https://calendly.com/sculptandstrive/30min"
             target="_blank"
           >
             <Button

@@ -24,7 +24,18 @@ export const HeroSection = () => {
     }
 
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await fetch("http://localhost/send-mail.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    });
+
+    // await new Promise(resolve => setTimeout(resolve, 1000));
+    
     setIsSubmitting(false);
     setIsSubmitted(true);
     toast.success("Welcome! Check your inbox for next steps.");

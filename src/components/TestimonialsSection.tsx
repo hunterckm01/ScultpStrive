@@ -210,12 +210,12 @@ export const TestimonialsSection = () => {
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
-                  <span className="font-display font-bold text-lg">TW</span>
+                  <span className="font-display font-bold text-lg">PP</span>
                 </div>
                 <div>
                   <div className="font-semibold"></div>
                   <div className="text-sm opacity-80">
-                    Senior Vitality Program • 14 months
+                    Prashant Pawar • 14 months
                   </div>
                 </div>
               </div>
@@ -316,7 +316,7 @@ export const TestimonialsSection = () => {
             </Button>
           )}
           <p className="text-sm text-muted-foreground mt-4">
-            Over 500+ verified transformations
+            Over 30+ verified transformations
           </p>
         </div>
       </div>

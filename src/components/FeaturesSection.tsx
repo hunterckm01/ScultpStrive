@@ -106,10 +106,10 @@ export const FeaturesSection = () => {
             <span className="text-gradient-hero">Succeed</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            AI tools can design workouts, but they can’t replace human
-            understanding. They don’t hold you accountable or adapt to how your
-            body feels each day. Personalized coaching ensures your workouts are
-            safe, effective, and built around you.
+            We design training plans around your body, lifestyle, and
+            goals—adapting each week based on real feedback, real progress, and
+            real life. Every workout is intentional, safe, and effective, so you
+            build strength, confidence, and results you can sustain.
           </p>
         </div>
 

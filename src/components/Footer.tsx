@@ -29,10 +29,12 @@ const footerLinks = {
     "Corporate Wellness",
   ],
   Resources: [
-    "Exercise Library",
-    "Success Stories",
-    "FAQ",
-    "Support",
+    "Workout Library",
+    "Beginner Fitness Guide",
+    "Nutrition Basics",
+    "Recovery & Mobility Tips",
+    "Progress Tracking Tools",
+    "Fitness Social Media Blog"
   ],
 };
 
@@ -95,11 +97,11 @@ export const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
               <a
-                href="mailto:hello@sculptandstrive.com"
+                href="mailto:sculptandstrive@gmail.com"
                 className="flex items-center gap-3 text-accent-foreground/70 hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                info@sculptandstrive.com
+                sculptandstrive@gmail.com
               </a>
               <a
                 href="tel:+1234567890"

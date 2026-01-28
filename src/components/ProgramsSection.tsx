@@ -119,7 +119,7 @@ export const ProgramsSection = () => {
       {/* <div className="text-center mt-12">
         <Button variant="hero" size="lg" asChild>
           <a
-            href="https://calendly.com/sculptandstrive/30min?month=2025-09"
+            href="https://calendly.com/sculptandstrive/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex"
