@@ -95,12 +95,6 @@ export const AssessmentSection = () => {
               </a>
             </Button>
 
-            {/* <a href = "https://calendly.com/sculptandstrive/30min?month=2025-09" target="_blank">
-              <Button className = "cursor-pointer" variant="hero" size="lg">
-                Book Your Assessment
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </a> */}
           </div>
 
           {/* Right Visual */}

@@ -43,12 +43,14 @@ export const ProgramCard = ({
   const classes = colorClasses[color];
 
   return (
-    <Card 
+    <Card
       className={`${classes.bg} ${classes.border} ${classes.hover} border hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 animate-slide-up group cursor-pointer`}
       style={{ animationDelay: `${delay}ms` }}
     >
       <CardHeader className="pb-4">
-        <div className={`w-14 h-14 ${classes.icon} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+        <div
+          className={`w-14 h-14 ${classes.icon} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+        >
           <Icon className="w-7 h-7" />
         </div>
         <CardTitle className="text-xl font-bold">{title}</CardTitle>
@@ -57,15 +59,24 @@ export const ProgramCard = ({
         <p className="text-muted-foreground mb-4">{description}</p>
         <ul className="space-y-2 mb-6">
           {features.map((feature, i) => (
-            <li key={i} className="flex items-center gap-2 text-sm text-foreground/80">
+            <li
+              key={i}
+              className="flex items-center gap-2 text-sm text-foreground/80"
+            >
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
               {feature}
             </li>
           ))}
         </ul>
-        {/* <Button variant="ghost" className="p-0 h-auto text-primary group-hover:gap-3 transition-all">
-          Learn More <ArrowRight className="w-4 h-4" />
-        </Button> */}
+        <Button
+          variant="ghost"
+          className="p-2 h-auto text-primary group-hover:gap-3 transition-all"
+          asChild
+        >
+          <a href="https://calendly.com/sculptandstrive/30min" target="_blank">
+            Learn More <ArrowRight className="w-4 h-4" />
+          </a>
+        </Button>
       </CardContent>
     </Card>
   );

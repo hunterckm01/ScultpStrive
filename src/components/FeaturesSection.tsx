@@ -106,15 +106,17 @@ export const FeaturesSection = () => {
             <span className="text-gradient-hero">Succeed</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            From AI-powered programming to expert support, our platform is designed to 
-            remove every barrier between you and your goals.
+            AI tools can design workouts, but they can’t replace human
+            understanding. They don’t hold you accountable or adapt to how your
+            body feels each day. Personalized coaching ensures your workouts are
+            safe, effective, and built around you.
           </p>
         </div>
 
         {/* Features Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card 
+            <Card
               key={feature.title}
               variant="glass"
               className="p-6 group hover:border-primary/30 transition-all duration-300 animate-slide-up"
@@ -131,7 +133,9 @@ export const FeaturesSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="font-display text-lg font-bold mb-2">{feature.title}</h3>
+              <h3 className="font-display text-lg font-bold mb-2">
+                {feature.title}
+              </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
