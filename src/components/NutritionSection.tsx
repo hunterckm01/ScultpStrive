@@ -35,8 +35,10 @@ import { MealLoggingForm } from "@/components/nutrition/MealLoggingForm";
 import { CustomFoodForm } from "@/components/nutrition/CustomFoodForm";
 import { NutritionAnalytics } from "@/components/nutrition/NutritionAnalytics";
 import { DietPlanForm } from "@/components/nutrition/DietPlanForm";
-import {USAFoods, IndianFoods } from '@/data'
+import {USAFoods, IndianFoods, USDAFoods } from '@/data'
 // const FOOD_API_KEY = import.meta.env.VITE_FOODBASE_API_KEY
+
+type Region = "USA" | "India" | "USDA";
 
 // Types for food database
 interface Food {
@@ -85,7 +87,7 @@ const weeklyAdherence = [
   { day: "Sun", adherence: 90 },
 ];
 
-const mapRawFoodToFood = (item: any, region: "USA" | "India"): Food => {
+const mapRawFoodToFood = (item: any, region: Region): Food => {
   return {
     id: item.food_id,
     name: item.food_name,
@@ -103,7 +105,7 @@ const mapRawFoodToFood = (item: any, region: "USA" | "India"): Food => {
 
 export const NutritionSection = () => {
   const { user, signOut } = useAuth();
-  const [selectedRegion, setSelectedRegion] = useState<"USA" | "India">("USA");
+  const [selectedRegion, setSelectedRegion] = useState<"USA" | "India" | "USDA">("USA");
   const [searchQuery, setSearchQuery] = useState("");
   const [foods, setFoods] = useState<Food[]>([]);
   const [loading, setLoading] = useState(true);
@@ -129,7 +131,7 @@ export const NutritionSection = () => {
    setLoading(true);
 
    try {
-     let rawData = selectedRegion === "USA" ? USAFoods : IndianFoods;
+     let rawData = selectedRegion === "USA" ? USAFoods : selectedRegion === "India" ? IndianFoods : USDAFoods;
 
      if (searchQuery) {
        const q = searchQuery.toLowerCase();
@@ -216,7 +218,10 @@ export const NutritionSection = () => {
   };
 
   return (
-    <section id="nutrition" className="py-24 relative overflow-hidden bg-gradient-to-b from-background to-muted/20">
+    <section
+      id="nutrition"
+      className="py-24 relative overflow-hidden bg-gradient-to-b from-background to-muted/20"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-8">
@@ -224,12 +229,12 @@ export const NutritionSection = () => {
             Smart Nutrition
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Fuel Your{" "}
-            <span className="text-gradient-hero">Transformation</span>
+            Fuel Your <span className="text-gradient-hero">Transformation</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Track your nutrition with our comprehensive USA & India food database. 
-            Monitor your diet adherence and achieve your fitness goals.
+            Track your nutrition with our comprehensive USA & India food
+            database. Monitor your diet adherence and achieve your fitness
+            goals.
           </p>
         </div>
 
@@ -241,9 +246,9 @@ export const NutritionSection = () => {
                 <User className="w-4 h-4 text-primary" />
               </div>
               <span className="text-sm font-medium">{user.email}</span>
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={() => signOut()}
                 className="text-muted-foreground hover:text-foreground"
               >
@@ -251,8 +256,8 @@ export const NutritionSection = () => {
               </Button>
             </div>
           ) : (
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               onClick={() => setAuthModalOpen(true)}
               className="gap-2"
             >
@@ -260,10 +265,10 @@ export const NutritionSection = () => {
               Sign In to Track
             </Button>
           )}
-          
+
           {user && (
             <div className="flex gap-2">
-              <Button 
+              <Button
                 variant={activeView === "browser" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveView("browser")}
@@ -271,7 +276,7 @@ export const NutritionSection = () => {
                 <Globe className="w-4 h-4 mr-2" />
                 Food Browser
               </Button>
-              <Button 
+              <Button
                 variant={activeView === "analytics" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveView("analytics")}
@@ -287,16 +292,24 @@ export const NutritionSection = () => {
         {user && activeView === "analytics" ? (
           <div className="max-w-4xl mx-auto">
             <div className="flex justify-end gap-2 mb-6">
-              <Button variant="outline" size="sm" onClick={() => setCustomFoodModalOpen(true)}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCustomFoodModalOpen(true)}
+              >
                 <PlusCircle className="w-4 h-4 mr-2" />
                 Add Custom Food
               </Button>
-              <Button variant="hero" size="sm" onClick={() => setDietPlanModalOpen(true)}>
+              <Button
+                variant="hero"
+                size="sm"
+                onClick={() => setDietPlanModalOpen(true)}
+              >
                 <Target className="w-4 h-4 mr-2" />
                 Set Goals
               </Button>
             </div>
-            <NutritionAnalytics setDietPlanModalOpen={setDietPlanModalOpen}/>
+            <NutritionAnalytics setDietPlanModalOpen={setDietPlanModalOpen} />
           </div>
         ) : (
           <div className="grid lg:grid-cols-2 gap-8 items-start animate-slide-up">
@@ -309,13 +322,15 @@ export const NutritionSection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold">Food Database</h3>
-                    <p className="text-sm text-muted-foreground">USA & India Foods</p>
+                    <p className="text-sm text-muted-foreground">
+                      USA & India Foods
+                    </p>
                   </div>
                 </div>
                 {user && (
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     onClick={() => setCustomFoodModalOpen(true)}
                     className="text-primary"
                   >
@@ -326,13 +341,27 @@ export const NutritionSection = () => {
               </div>
 
               {/* Region Tabs */}
-              <Tabs value={selectedRegion} onValueChange={(v) => setSelectedRegion(v as "USA" | "India")} className="mb-4">
-                <TabsList className="grid w-full grid-cols-2">
+              <Tabs
+                value={selectedRegion}
+                onValueChange={(v) => setSelectedRegion(v as Region)}
+                className="mb-4"
+              >
+                <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="USA" className="flex items-center gap-2">
                     <span className="text-lg">🇺🇸</span> USA
                   </TabsTrigger>
-                  <TabsTrigger value="India" className="flex items-center gap-2">
+                  <TabsTrigger
+                    value="India"
+                    className="flex items-center gap-2"
+                  >
                     <span className="text-lg">🇮🇳</span> India
+                  </TabsTrigger>
+                  {/* Global */}
+                  <TabsTrigger
+                    value="USDA"
+                    className="flex items-center gap-2"
+                  >
+                    <span className="text-lg">USDA</span> Global
                   </TabsTrigger>
                 </TabsList>
               </Tabs>
@@ -372,7 +401,9 @@ export const NutritionSection = () => {
                         }`}
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <span className="font-medium text-sm">{food.name}</span>
+                          <span className="font-medium text-sm">
+                            {food.name}
+                          </span>
                           <Badge variant="outline" className="text-xs">
                             {food.category}
                           </Badge>
@@ -397,9 +428,15 @@ export const NutritionSection = () => {
 
               {/* Quick Add Button */}
               {selectedFood && (
-                <Button className="w-full mt-4" variant="hero" onClick={handleAddToLog}>
+                <Button
+                  className="w-full mt-4"
+                  variant="hero"
+                  onClick={handleAddToLog}
+                >
                   <Plus className="w-4 h-4 mr-2" />
-                  {user ? `Add ${selectedFood.name} to Log` : "Sign In to Log Meals"}
+                  {user
+                    ? `Add ${selectedFood.name} to Log`
+                    : "Sign In to Log Meals"}
                 </Button>
               )}
             </Card>
@@ -415,14 +452,20 @@ export const NutritionSection = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Diet Adherence</h3>
-                      <p className="text-sm text-muted-foreground">Weekly Performance</p>
+                      <p className="text-sm text-muted-foreground">
+                        Weekly Performance
+                      </p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className={`font-display text-3xl font-bold ${getAdherenceColor(overallAdherence)}`}>
+                    <div
+                      className={`font-display text-3xl font-bold ${getAdherenceColor(overallAdherence)}`}
+                    >
                       {overallAdherence}%
                     </div>
-                    <div className="text-xs text-muted-foreground">Overall Score</div>
+                    <div className="text-xs text-muted-foreground">
+                      Overall Score
+                    </div>
                   </div>
                 </div>
 
@@ -436,8 +479,12 @@ export const NutritionSection = () => {
                           style={{ height: `${day.adherence}%` }}
                         />
                       </div>
-                      <span className="text-xs text-muted-foreground">{day.day}</span>
-                      <div className={`text-xs font-semibold ${getAdherenceColor(day.adherence)}`}>
+                      <span className="text-xs text-muted-foreground">
+                        {day.day}
+                      </span>
+                      <div
+                        className={`text-xs font-semibold ${getAdherenceColor(day.adherence)}`}
+                      >
                         {day.adherence}%
                       </div>
                     </div>
@@ -448,7 +495,9 @@ export const NutritionSection = () => {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="text-center p-3 bg-muted/50 rounded-xl">
                     <div className="text-lg font-bold text-primary">92%</div>
-                    <div className="text-xs text-muted-foreground">Calories</div>
+                    <div className="text-xs text-muted-foreground">
+                      Calories
+                    </div>
                   </div>
                   <div className="text-center p-3 bg-muted/50 rounded-xl">
                     <div className="text-lg font-bold text-secondary">88%</div>
@@ -470,19 +519,25 @@ export const NutritionSection = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Today's Nutrition</h3>
-                      <p className="text-sm text-muted-foreground">1,847 / 2,200 cal</p>
+                      <p className="text-sm text-muted-foreground">
+                        1,847 / 2,200 cal
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-secondary" />
-                    <span className="font-semibold text-secondary">On Track</span>
+                    <span className="font-semibold text-secondary">
+                      On Track
+                    </span>
                   </div>
                 </div>
 
                 {/* Progress Bar */}
                 <div className="mb-6">
                   <div className="flex justify-between text-sm mb-2">
-                    <span className="text-muted-foreground">Daily Progress</span>
+                    <span className="text-muted-foreground">
+                      Daily Progress
+                    </span>
                     <span className="font-semibold">84%</span>
                   </div>
                   <Progress value={84} className="h-3" />
@@ -504,9 +559,16 @@ export const NutritionSection = () => {
                   </div>
                   <div className="flex justify-between text-sm">
                     {macroData.map((macro) => (
-                      <div key={macro.label} className="flex items-center gap-2">
-                        <div className={`w-2 h-2 rounded-full ${macro.color}`} />
-                        <span className="text-muted-foreground">{macro.label}</span>
+                      <div
+                        key={macro.label}
+                        className="flex items-center gap-2"
+                      >
+                        <div
+                          className={`w-2 h-2 rounded-full ${macro.color}`}
+                        />
+                        <span className="text-muted-foreground">
+                          {macro.label}
+                        </span>
                         <span className="font-semibold">{macro.value}%</span>
                       </div>
                     ))}
@@ -516,14 +578,20 @@ export const NutritionSection = () => {
                 {/* Quick Log */}
                 <div className="grid grid-cols-4 gap-2">
                   {["Breakfast", "Lunch", "Snack", "Dinner"].map((meal, i) => (
-                    <div 
+                    <div
                       key={meal}
                       className={`p-3 rounded-xl border text-center ${
-                        i < 2 ? "border-secondary/30 bg-secondary/5" : "border-border bg-muted/50"
+                        i < 2
+                          ? "border-secondary/30 bg-secondary/5"
+                          : "border-border bg-muted/50"
                       }`}
                     >
-                      <div className="text-xs text-muted-foreground mb-1">{meal}</div>
-                      <div className={`font-semibold text-xs ${i < 2 ? "text-secondary" : "text-muted-foreground"}`}>
+                      <div className="text-xs text-muted-foreground mb-1">
+                        {meal}
+                      </div>
+                      <div
+                        className={`font-semibold text-xs ${i < 2 ? "text-secondary" : "text-muted-foreground"}`}
+                      >
                         {i < 2 ? "✓ Done" : "Pending"}
                       </div>
                     </div>
@@ -544,7 +612,12 @@ export const NutritionSection = () => {
                 ))}
               </div>
 
-              <Button variant="hero" size="lg" className="w-full" onClick={handleStartTracking}>
+              <Button
+                variant="hero"
+                size="lg"
+                className="w-full"
+                onClick={handleStartTracking}
+              >
                 {user ? "View Full Analytics" : "Start Tracking Your Diet"}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -555,19 +628,19 @@ export const NutritionSection = () => {
 
       {/* Modals */}
       <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
-      <MealLoggingForm 
-        open={mealLogModalOpen} 
-        onOpenChange={setMealLogModalOpen} 
+      <MealLoggingForm
+        open={mealLogModalOpen}
+        onOpenChange={setMealLogModalOpen}
         selectedFood={selectedFood}
         onSuccess={() => setSelectedFood(null)}
       />
-      <CustomFoodForm 
-        open={customFoodModalOpen} 
-        onOpenChange={setCustomFoodModalOpen} 
+      <CustomFoodForm
+        open={customFoodModalOpen}
+        onOpenChange={setCustomFoodModalOpen}
       />
-      <DietPlanForm 
-        open={dietPlanModalOpen} 
-        onOpenChange={setDietPlanModalOpen} 
+      <DietPlanForm
+        open={dietPlanModalOpen}
+        onOpenChange={setDietPlanModalOpen}
       />
     </section>
   );

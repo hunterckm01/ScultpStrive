@@ -56,7 +56,7 @@ export const RealLifeFitnessSection = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               It's built for perfect schedules, endless motivation, and bodies
-              that never get tired, injured, or stressed.
+              that never get tired, injured or stressed.
             </p>
             <p className="text-lg font-medium text-primary">
               Real life doesn't work like that.

@@ -1,4 +1,5 @@
 import USAFoods from './foods.us.json'
 import IndianFoods from './foods.in.json'
 
-export {USAFoods, IndianFoods};
+const USDAFoods = [...USAFoods, ...IndianFoods]
+export {USAFoods, IndianFoods, USDAFoods};

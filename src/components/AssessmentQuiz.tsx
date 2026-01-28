@@ -239,7 +239,7 @@ export const AssessmentQuiz = () => {
 
   if (!started) {
     return (
-      <section className="py-24 bg-gradient-to-b from-background to-muted/30">
+      <section className="py-24 bg-gradient-to-b from-background to-muted/30 animate-slide-up">
         <div className="container mx-auto px-4">
           <Card variant="elevated" className="max-w-3xl mx-auto">
             <CardContent className="p-8 md:p-12 text-center">
@@ -250,28 +250,39 @@ export const AssessmentQuiz = () => {
                 Find Your Perfect Starting Point
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-                Take our 2-minute assessment to discover your fitness level, get personalized program recommendations, 
-                and start your transformation journey today.
+                Take our 2-minute assessment to discover your fitness level, get
+                personalized program recommendations, and start your
+                transformation journey today.
               </p>
-              
+
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="p-4 rounded-xl bg-muted/50">
                   <User className="w-8 h-8 text-terracotta-500 mx-auto mb-2" />
-                  <h4 className="font-semibold text-foreground">Personalized</h4>
-                  <p className="text-sm text-muted-foreground">Tailored to your goals & needs</p>
+                  <h4 className="font-semibold text-foreground">
+                    Personalized
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    Tailored to your goals & needs
+                  </p>
                 </div>
                 <div className="p-4 rounded-xl bg-muted/50">
                   <Activity className="w-8 h-8 text-sage-600 mx-auto mb-2" />
                   <h4 className="font-semibold text-foreground">8 Questions</h4>
-                  <p className="text-sm text-muted-foreground">Quick and comprehensive</p>
+                  <p className="text-sm text-muted-foreground">
+                    Quick and comprehensive
+                  </p>
                 </div>
                 <div className="p-4 rounded-xl bg-muted/50">
                   <Sparkles className="w-8 h-8 text-terracotta-500 mx-auto mb-2" />
-                  <h4 className="font-semibold text-foreground">Instant Results</h4>
-                  <p className="text-sm text-muted-foreground">Get your plan immediately</p>
+                  <h4 className="font-semibold text-foreground">
+                    Instant Results
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    Get your plan immediately
+                  </p>
                 </div>
               </div>
-              
+
               <Button variant="hero" size="xl" onClick={() => setStarted(true)}>
                 Start Assessment
                 <ArrowRight className="w-5 h-5 ml-2" />
