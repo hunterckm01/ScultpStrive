@@ -109,8 +109,9 @@ export const Header = () => {
               <div className="flex flex-col gap-3 items-center">
                 <Button
                   variant="glass"
-                  size="sm"
+                  size="default"
                   onClick={() => setAuthModalOpen(true)}
+                  className="px-6 py-5"
                 >
                   Login
                 </Button>

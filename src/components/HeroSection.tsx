@@ -34,8 +34,6 @@ export const HeroSection = () => {
       }),
     });
 
-    // await new Promise(resolve => setTimeout(resolve, 1000));
-
     setIsSubmitting(false);
     setIsSubmitted(true);
     toast.success("Welcome! Check your inbox for next steps.");

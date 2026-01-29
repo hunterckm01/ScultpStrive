@@ -105,7 +105,7 @@ const mapRawFoodToFood = (item: any, region: Region): Food => {
 
 export const NutritionSection = () => {
   const { user, signOut } = useAuth();
-  const [selectedRegion, setSelectedRegion] = useState<"USA" | "India" | "USDA">("USA");
+  const [selectedRegion, setSelectedRegion] = useState<"USA" | "India" | "USDA">("USDA");
   const [searchQuery, setSearchQuery] = useState("");
   const [foods, setFoods] = useState<Food[]>([]);
   const [loading, setLoading] = useState(true);
@@ -132,6 +132,8 @@ export const NutritionSection = () => {
 
    try {
      let rawData = selectedRegion === "USA" ? USAFoods : selectedRegion === "India" ? IndianFoods : USDAFoods;
+
+     console.log(rawData);
 
      if (searchQuery) {
        const q = searchQuery.toLowerCase();
@@ -211,7 +213,8 @@ export const NutritionSection = () => {
 
   const handleStartTracking = () => {
     if (!user) {
-      setAuthModalOpen(true);
+      window.open("https://calendly.com/sculptandstrive/30min", "_blank");
+      // setAuthModalOpen(true);
       return;
     }
     setActiveView("analytics");
@@ -232,7 +235,7 @@ export const NutritionSection = () => {
             Fuel Your <span className="text-gradient-hero">Transformation</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Track your nutrition with our comprehensive USA & India food
+            Track your nutrition with our comprehensive Global food
             database. Monitor your diet adherence and achieve your fitness
             goals.
           </p>
@@ -323,7 +326,7 @@ export const NutritionSection = () => {
                   <div>
                     <h3 className="font-semibold">Food Database</h3>
                     <p className="text-sm text-muted-foreground">
-                      USA & India Foods
+                      Global Foods
                     </p>
                   </div>
                 </div>
@@ -346,8 +349,8 @@ export const NutritionSection = () => {
                 onValueChange={(v) => setSelectedRegion(v as Region)}
                 className="mb-4"
               >
-                <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="USA" className="flex items-center gap-2">
+                <TabsList className="grid w-full grid-cols-1">
+                  {/* <TabsTrigger value="USA" className="flex items-center gap-2">
                     <span className="text-lg">🇺🇸</span> USA
                   </TabsTrigger>
                   <TabsTrigger
@@ -355,7 +358,7 @@ export const NutritionSection = () => {
                     className="flex items-center gap-2"
                   >
                     <span className="text-lg">🇮🇳</span> India
-                  </TabsTrigger>
+                  </TabsTrigger> */}
                   {/* Global */}
                   <TabsTrigger
                     value="USDA"
