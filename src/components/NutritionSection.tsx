@@ -259,14 +259,15 @@ export const NutritionSection = () => {
               </Button>
             </div>
           ) : (
-            <Button
-              variant="outline"
-              onClick={() => setAuthModalOpen(true)}
-              className="gap-2"
-            >
-              <LogIn className="w-4 h-4" />
-              Sign In to Track
-            </Button>
+            <></>
+            // <Button
+            //   variant="outline"
+            //   onClick={() => setAuthModalOpen(true)}
+            //   className="gap-2"
+            // >
+            //   <LogIn className="w-4 h-4" />
+            //   Sign In to Track
+            // </Button>
           )}
 
           {user && (
